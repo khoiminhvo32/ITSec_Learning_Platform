@@ -50,6 +50,18 @@ services:
         internal:
     # This command is required to set important mariadb defaults
     command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
+  
+  webtheory:
+    build: ../webTheory
+    restart: unless-stopped
+    user: "node"
+    volumes:
+      - "../webTheory/src:/usr/src/app"
+    ports:
+      - "3000:3000"
+      - "6001:6001" # FOR DEBUG
+    command: ["bash", "-c", "npm install --save && nodemon -L --inspect=0.0.0.0:6001 app.js"]
+  
 
   cache:
     image: redis:4
