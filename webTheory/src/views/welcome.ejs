@@ -38,7 +38,7 @@
 	<body>
 		
 		<br>
-		<div class="container">
+		<div class="container" id="itsec">
 			<div class="row justify-content-center">
 			</div>
 		</div>
@@ -71,11 +71,61 @@
     <!-- END nav -->
   </div>
 
-<br><br>
+<br><br><br><br><br>
 <div class="header">
 	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">ITSec Learning Platfor<span class="vim-caret">m</span></h1>
 </div>
-<br><br>
+<br>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<style>
+	.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
@@ -99,7 +149,11 @@
         </div>
     </div>
 </div>
-<br><br>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down" id="start"></div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
@@ -117,13 +171,17 @@
         </div>
     </div>
 </div>
-<br><br>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down" id="about-me"></div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
-            <div class="ht-tm-componentsblock" data-aos="fade-in" style="text-align: center;">
+            <div class="ht-tm-componentsblock" data-aos="fade-down" style="text-align: center;width:70%;margin:auto;">
                 <h2 style="color:white;"><b>About me</b></h2><br>
-				<p> I am just a normal 4th-year student in Vietnamese - German University (or maybe I have graduated if you can see this website in the future 😁), from academic year 2018. <br>
+				<p style="text-align: justify;text-justify: inter-word;"> I am just a normal 4th-year student in Vietnamese - German University (or maybe I have graduated if you can see this website in the future 😁), from academic year 2018. <br>
                     My name is Vo Thanh Minh Khoi - an Web Application at <b>CyberJutsu</b> with the enthusiasm in Cyber Security
 					<br><br>
 				<img src="navbar/images/minkhoy.jpg" height="300" width="300" style="display:block;margin-left: auto;margin-right: auto;      border:2px solid #fff;
@@ -131,9 +189,9 @@
 				box-shadow: 10px 10px 5px #ccc;
 				-moz-box-shadow: 10px 10px 5px #ccc;
 				-webkit-box-shadow: 10px 10px 5px #ccc;
-				-khtml-box-shadow: 10px 10px 5px #ccc;"><br>
+				-khtml-box-shadow: 10px 10px 5px #ccc;">
 					
-				<b>If you have any question, please contact me via: <br><a href="https://www.facebook.com/khoi.vo.104/">My Facebook ✌</a></b></p><br>
+				</p><b>If you have any question, please contact me via: <br><a href="https://www.facebook.com/khoi.vo.104/" style="text-align:center;">My Facebook ✌</a></b><br><br><br><br>
             </div>
         </div>
     </div>
@@ -143,9 +201,9 @@
 	<footer>
 		<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
 		<ul class="list-inline">
-			<li class="list-inline-item"><a href="#">Home</a></li>
-			<li class="list-inline-item"><a href="#">Services</a></li>
-			<li class="list-inline-item"><a href="#">About</a></li>
+			<li class="list-inline-item"><a href="#itsec">Home</a></li>
+			<li class="list-inline-item"><a href="academy">Academy</a></li>
+			<li class="list-inline-item"><a href="#about-me">About</a></li>
 			<li class="list-inline-item"><a href="#">Terms</a></li>
 			<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
 		</ul>
