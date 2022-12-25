@@ -7,3 +7,11 @@ exports.getIndex = (req, res, next) => {
 exports.getWelcome = (req, res, next) => {
     return res.render("welcome");
 }
+
+exports.getAcademy = (req, res, next) => {
+    return res.render("academy");
+}
+
+exports.getSQLi = (req, res, next) => {
+    return res.render("sql-injection");
+}

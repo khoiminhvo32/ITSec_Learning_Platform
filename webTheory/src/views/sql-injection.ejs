@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>ITSec Learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- AOS - Animated on Scroll CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+	
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet"> <!-- font -->
+
+    <link rel="stylesheet" href="../solid/dist/css/style.css"> <!-- static CSS -->
+
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> <!-- font -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- font -->
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> <!-- font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- font -->
+
+	<link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+	
+	<link rel="stylesheet" href="../navbar/css/style.css">
+
+	<link rel="stylesheet" href="../navbar/css/bootstrap4-neon-glow.css">
+
+	</head>
+	<body>
+		
+		<br>
+		<div class="container" id="itsec">
+			<div class="row justify-content-center">
+			</div>
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		    <div class="container">
+		    	<a class="navbar-brand" href="/">ITSec Platform</a>
+		    	<div class="social-media order-lg-last">
+		    		<p class="mb-0 d-flex">
+		    			<a href="https://www.facebook.com/khoi.vo.104/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+		    		</p>
+	        </div>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="fa fa-bars"></span> Menu
+		      </button>
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		        <ul class="navbar-nav ml-auto mr-md-3">
+		        	<li class="nav-item active"><a href="../academy" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="#about-me" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+		          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+    <!-- END nav -->
+  </div>
+
+<br><br><br><br><br>
+<div class="header">
+	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">SQL Injectio<span class="vim-caret">n</span></h1><br>
+    <p style="text-align:center; color:white;" data-aos="fade-in">A really common and basic vulnerability in Injection Security Flaws</p>
+</div>
+<br>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Requirement</b></h2><br>
+                <p> In order to get the best experience learning this Vulnerability, you should have basic knowledge in 
+                    Database Manage System (DBMS) and SQL syntax, in this module, you should get used to <b>MySQL Database and Syntax</b><br>
+
+					<br>
+                    <img src="../navbar/images/mysql.png" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
+                    <br>
+					
+				<b>For more information: <a href="https://dev.mysql.com/doc/refman/8.0/en/introduction.html">MySQL Documentation</a></b><br><br>
+                If you have learned this vulnerability before, why not going to solve my <a href="http://localhost:8000/">challenges here</a>?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>First of all.. What is Injection?</b></h2><br>
+                <p> As you known, Injection is to input something into an object. 
+                    For example, in the Covid-19 pandemic, we all have to injected vaccine in order to prevent / mitigate the 
+                    consequence of the Corona Virus. That is injection, a way to provide some instruction for an object to do 
+                    something. For the above example, the instruction is the vaccine, that is to tell the body how to deal with the 
+                    Corona Virus.
+
+					<br>
+                    <img src="../navbar/images/injection.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+
+                    Back to our module, let's review the DBMS and SQL Syntax, in order to bring out everything records / data from a table called "users",
+                    we will use a query:
+					<br><br>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users;</code>
+                    <br>
+                    This is just a normal query, right? Let's get to something more complicated, to select out the username "<b>conmeo</b>", this query will turn out:
+                    <br><br>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="conmeo";</code>
+                    <br>
+                    Here, some explanation for the syntax:
+                    <ul style="list-type-style:circle;">
+                        <li><b>SELECT</b>: is used to retrieve rows selected from one or more tables</li>
+                        <li><b>FROM</b>: indicates the table or tables from which to retrieve rows</li>
+                        <li><b>WHERE</b>: indicates the condition or conditions that rows must satisfy to be selected</li>
+                    </ul>
+                    <b>These information is retrieve from: <a href="https://dev.mysql.com/doc/refman/8.0/en/introduction.html">MySQL Documentation</a></b>
+                    <br>
+                    Here is just the basic syntax of MySQL, if you want to get other username, just replace the "conmeo" with the value you want.
+                    Now let's move to the next section
+                    <br>
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>First look at SQL Injection</b></h2><br>
+                <p> As I said before, Injection is to input something into an object.
+                    <br>
+                    In this case, the object is <b>MySQL syntax</b>, so if an attacker try to input some instruction into the MySQL query?
+                    <br>
+                    Let's make an example, if a website allows users to search for the username of other users, then the value of useranme column
+                    would be controlled by users
+                    <br>
+                    As you know, when there is a field that is controlled by out users, then that field would be called <b>Untrusted Data</b>
+
+					<br><br>
+                    <img src="../navbar/images/hacker.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;float:left;"><img src="../navbar/images/database.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+
+                    Let's take a look again at our query:
+					<br><br>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="conmeo";</code>
+                    <br>
+                    Now, if the attacker input the value: <code style="color: red;">" or 1=1 #</code>
+                    <br>
+                    The query now becomes:
+                    <br><br>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">" or 1=1; #</b><b style="color: grey;">";</b></code>
+                    <br>
+                    The database which handles the query has no clue to distinguish between attacker's input and query syntax / instruction.
+                    <br>
+                    In the view of database, it will consider to select the username " " (empty value), and then return all the data from the "users" table 
+                    thanks to the condition <b>OR 1=1</b>, and then all the syntax behind would be comment out by the <b>"#"</b>.
+                    <br><br>
+                    By this way, the attacker could steal all the data that should not be approach by him 
+                    <br>
+                    Another example, now this time, if the attacker input into the username field: <code style="color:red;">not_exist" or username="admin</code>
+                    <br>
+                    The query will now become:
+                    <br><br>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">" or username="admin</b>";</code>
+                    <br>
+                    Assume that in the "users" table, there are so many columns such as "password", "username", "email", etc.
+                    <br>
+                    By this way, the attacker can get all the above information, which is really sensitive.
+                    Which the password retrieved from the above query, the attacker can now login and fake as an admin.
+                    <br><br>
+                    From now on, the attacker can gain access to every speacial features of the website.
+                    <br><br>
+                    <img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+                    <div class="challenge" style="text-align: center;">
+                        <br>
+                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
+                        <h3 style="text-align:center;"><a href="http://localhost:8000/">CTFd Challenges</a></h3>
+                        <br>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<style>
+	.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+.challenge {
+	--x: 50%;
+	--y: 50%;
+	
+	position: relative;
+	appearance: none;
+	padding: 1em 2em;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	border-radius: 100px;
+	
+	border: 4px solid transparent;
+	background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+<div class="footer-basic" data-aos="fade-in">
+	<footer>
+		<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com/khoi.vo.104/"><i class="icon ion-social-facebook"></i></a></div>
+		<ul class="list-inline">
+			<li class="list-inline-item"><a href="#itsec">Home</a></li>
+			<li class="list-inline-item"><a href="academy">Academy</a></li>
+			<li class="list-inline-item"><a href="#about-me">About</a></li>
+			<li class="list-inline-item"><a href="#">Terms</a></li>
+			<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+		</ul>
+		<p class="copyright">MinKhoy © 2022</p>
+	</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../navbar/js/jquery.min.js"></script>
+  <script src="../navbar/js/popper.js"></script>
+  <script src="../navbar/js/bootstrap.min.js"></script>
+  <script src="../navbar/js/main.js"></script>
+  <!-- AOS - Animated on Scroll JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+	AOS.init();
+  </script>
+
+	</body>
+</html>
+
