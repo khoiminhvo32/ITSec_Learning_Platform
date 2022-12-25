@@ -15,3 +15,7 @@ exports.getAcademy = (req, res, next) => {
 exports.getSQLi = (req, res, next) => {
     return res.render("sql-injection");
 }
+
+exports.getCMDi = (req, res, next) => {
+    return res.render("command-injection");
+}

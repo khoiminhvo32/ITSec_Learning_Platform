@@ -73,8 +73,8 @@
 
 <br><br><br><br><br>
 <div class="header">
-	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">SQL Injectio<span class="vim-caret">n</span></h1><br>
-    <p style="text-align:center; color:white;" data-aos="fade-in">A really common and basic vulnerability in Injection Security Flaws</p>
+	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">Command Injectio<span class="vim-caret">n</span></h1><br>
+    <p style="text-align:center; color:white;" data-aos="fade-in">A really basic but very dangerous vulnerability in Injection Security Flaws</p>
 </div>
 <br>
 
@@ -88,13 +88,13 @@
             <div class="ht-tm-componentsblock">
                 <h2 style="color:white;"><b>Requirement</b></h2><br>
                 <p> In order to get the best experience learning this Vulnerability, you should have basic knowledge in 
-                    Database Manage System (DBMS) and SQL syntax, in this module, you should get used to <b>MySQL Database and Syntax</b><br>
+                    <b>OS Command in Linux</b> and <b>Linux Operating System</b>, along with the <b>Command Line interface of Linux</b><br>
 
 					<br>
-                    <img src="../navbar/images/mysql.png" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
+                    <img src="../navbar/images/Linux-Logo.jpg" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
                     <br>
 					
-				<b>For more information: <a href="https://dev.mysql.com/doc/refman/8.0/en/introduction.html">MySQL Documentation</a></b><br><br>
+				<b>For more information: <a href="https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/GNU-Linux-Tools-Summary.html">TLDP Linux Documentation</a></b><br><br>
                 If you have learned this vulnerability before, why not going to solve my <a href="http://localhost:8000/">challenges here</a>?
                 </p>
             </div>
@@ -110,7 +110,7 @@
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>First of all.. What is Injection?</b></h2><br>
+                <h2 style="color:white;"><b>First of all.. Injection again?</b></h2><br>
                 <p> As you known, Injection is to input something into an object. 
                     For example, in the Covid-19 pandemic, we all have to injected vaccine in order to prevent / mitigate the 
                     consequence of the Corona Virus. That is injection, a way to provide some instruction for an object to do 
@@ -121,10 +121,9 @@
                     <img src="../navbar/images/injection.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
                     <br>
 
-                    Back to our module, let's review the DBMS and SQL Syntax, in order to bring out everything records / data from a table called "users",
-                    we will use a query:
+                    Back to our module, let's me review introduce you how to basically call a OS Command in PHP:
 					<br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users;</code>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">&lt;?php system("id"); ?&gt;</code>
                     <br>
                     This is just a normal query, right? Let's get to something more complicated, to select out the username "<b>conmeo</b>", this query will turn out:
                     <br><br>
@@ -192,7 +191,7 @@
                     <br>
                     The query will now become:
                     <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">not_exist" or username="admin</b>";</code>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">" or username="admin</b>";</code>
                     <br>
                     Assume that in the "users" table, there are so many columns such as "password", "username", "email", etc.
                     <br>
