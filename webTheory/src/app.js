@@ -16,6 +16,9 @@ app.use(cookieParser());
 const publicDir = path.join(__dirname, 'views');
 app.use(express.static(publicDir));
 
+// favicon
+app.use('/favicon', express.static('views/navbar/images/hacker.png'));
+
 // view engine setup
 app.set('view engine', 'ejs');
 
