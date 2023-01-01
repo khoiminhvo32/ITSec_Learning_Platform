@@ -93,11 +93,7 @@
                 <p> Conceptually at least, authentication vulnerabilities are some of the simplest issues to understand. 
                     However, they can be among the most critical due to the obvious relationship between authentication and security. 
                     As well as potentially allowing attackers direct access to sensitive data and functionality, they also expose additional attack surface for further exploits<br>
-                    <ul style="list-type-style:circle;">
-                        <li>Something you <b>know</b>, such as a password or the answer to a security question. These are sometimes referred to as "<b>knowledge factors</b>.</li>
-                        <li>Something you <b>have</b>, that is, a physical object like a mobile phone or security token. These are sometimes referred to as "<b>possession factors</b>".</li>
-                        <li>Something you <b>are</b> or <b>do</b>, for example, your biometrics or patterns of behavior. These are sometimes referred to as "<b>inherence factors</b>".</li>
-                    </ul>
+
 					<br>
                     <img src="../navbar/images/broken-authen.jpg" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
                     <br>
@@ -122,41 +118,11 @@
                     <br>
                     There are three main categories of authentication factors:
                     <ul style="list-type-style:circle;">
-                        <li>If this file type is non-executable, such as an image or a static HTML page, the server may just send the file's contents to the client in an HTTP response.</li>
-                        <li>If the file type is executable, such as a PHP file, and the server is configured to execute files of this type, it will assign variables based on the headers and parameters in the HTTP request before running the script. The resulting output may then be sent to the client in an HTTP response.</li>
-                        <li>If the file type is executable, but the server is not configured to execute files of this type, it will generally respond with an error. However, in some cases, the contents of the file may still be served to the client as plain text. Such misconfigurations can occasionally be exploited to leak source code and other sensitive information.</li>
+                        <li>Something you <b>know</b>, such as a password or the answer to a security question. These are sometimes referred to as "<b>knowledge factors</b>.</li>
+                        <li>Something you <b>have</b>, that is, a physical object like a mobile phone or security token. These are sometimes referred to as "<b>possession factors</b>".</li>
+                        <li>Something you <b>are</b> or <b>do</b>, for example, your biometrics or patterns of behavior. These are sometimes referred to as "<b>inherence factors</b>".</li>
                     </ul>
-                    <br>
-                    As you known, Injection is to input something into an object. 
-                    For example, in the Covid-19 pandemic, we all have to injected vaccine in order to prevent / mitigate the 
-                    consequence of the Corona Virus. That is injection, a way to provide some instruction for an object to do 
-                    something. For the above example, the instruction is the vaccine, that is to tell the body how to deal with the 
-                    Corona Virus.
-
-					<br>
-                    <img src="../navbar/images/injection.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
-                    <br>
-
-                    Back to our module, let's review the DBMS and SQL Syntax, in order to bring out everything records / data from a table called "users",
-                    we will use a query:
-					<br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users;</code>
-                    <br>
-                    This is just a normal query, right? Let's get to something more complicated, to select out the username "<b>conmeo</b>", this query will turn out:
-                    <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="conmeo";</code>
-                    <br>
-                    Here, some explanation for the syntax:
-                    <ul style="list-type-style:circle;">
-                        <li><b>SELECT</b>: is used to retrieve rows selected from one or more tables</li>
-                        <li><b>FROM</b>: indicates the table or tables from which to retrieve rows</li>
-                        <li><b>WHERE</b>: indicates the condition or conditions that rows must satisfy to be selected</li>
-                    </ul>
-                    <b>These information is retrieve from: <a href="https://dev.mysql.com/doc/refman/8.0/en/introduction.html">MySQL Documentation</a></b>
-                    <br>
-                    Here is just the basic syntax of MySQL, if you want to get other username, just replace the "conmeo" with the value you want.
-                    Now let's move to the next section
-                    <br>
+                    Authenticaion relies on a numbers of technologies to verify one or more of the above factors.
 				</p>
             </div>
         </div>
@@ -171,69 +137,9 @@
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>First look at SQL Injection</b></h2><br>
+                <h2 style="color:white;"><b>Do you the.. difference between authentication and authorization?</b></h2><br>
                 <p> As I said before, Injection is to input something into an object.
-                    <br>
-                    In this case, the object is <b>MySQL syntax</b>, so if an attacker try to input some instruction into the MySQL query?
-                    <br>
-                    Let's make an example, if a website allows users to search for the username of other users, then the value of useranme column
-                    would be controlled by users
-                    <br>
-                    As you know, when there is a field that is controlled by out users, then that field would be called <b>Untrusted Data</b>
-
-					<br><br>
-                    <img src="../navbar/images/hacker.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;float:left;"><img src="../navbar/images/database.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
-                    <br>
-
-                    Come to this, I will show you how a really basic syntax of a PHP beginner-level programmers would code to query to a database:
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">$query = <span style="color: red;">'</span>SELECT * FROM users WHERE username="<span style="color: red;">'</span> . $user_input . <span style="color: yellow;">'</span>"<span style="color: yellow;">'</span>;
-                                                                                                                     <br>$db_result = $database->query($query);</code>
-                    <br>
-
-                    The Developer uses a technique called "String Concatenation" to add the <b>$user_input</b> variable to the query string. Then, he uses that strings to query to database. Let's together 
-                    see if this style of code would bring any threats which causes damage to our system.
-                    <br>
-
-                    Let's take a look again at our query if a user want to get information of the "conmeo" username:
-					<br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="conmeo";</code>
-                    <br>
-                    In this query, the double quotes are the instruction, which tell the database that the value between the double quotes would be a string.
-                    <br>
-                    Now, if the attacker input the value: <code style="color: red;">" or 1=1 #</code>
-                    <br>
-                    The query now becomes:
-                    <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">" or 1=1; #</b><b style="color: grey;">";</b></code>
-                    <br>
-                    The database which handles the query has no clue to distinguish between attacker's input and query syntax / instruction.
-                    <br>
-                    In the view of database, it will consider to select the username " " (empty value), and then return all the data from the "users" table 
-                    thanks to the condition <b>OR 1=1</b>, and then all the syntax behind would be comment out by the <b>"#"</b>.
-                    <br><br>
-                    By this way, the attacker could steal all the data that should not be approach by him 
-                    <br>
-                    Another example, now this time, if the attacker input into the username field: <code style="color:red;">not_exist" or username="admin</code>
-                    <br>
-                    The query will now become:
-                    <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">not_exist" or username="admin</b>";</code>
-                    <br>
-                    Assume that in the "users" table, there are so many columns such as "password", "username", "email", etc.
-                    <br>
-                    By this way, the attacker can get all the above information, which is really sensitive.
-                    Which the password retrieved from the above query, the attacker can now login and fake as an admin.
-                    <br><br>
-                    From now on, the attacker can gain access to every speacial features of the website.
-                    <br><br>
-                    <img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
-                    <br>
-                    <div class="challenge" style="text-align: center;">
-                        <br>
-                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
-                        <h3 style="text-align:center;"><a class="button button-primary button-wide-mobile" href="http://localhost:8000/" style="border-radius: 25px;">CTFd Platform</a>
-                        <br>
-                    </div>
+                    
                 </p>
             </div>
         </div>
