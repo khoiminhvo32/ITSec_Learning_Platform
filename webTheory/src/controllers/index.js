@@ -23,3 +23,7 @@ exports.getCMDi = (req, res, next) => {
 exports.getFileUpload = (req, res, next) => {
     return res.render("file-upload-vulnerabilities");
 }
+
+exports.getBrokenAuth = (req, res, next) => {
+    return res.render("broken-authentication");
+}
