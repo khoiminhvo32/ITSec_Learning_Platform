@@ -114,8 +114,8 @@
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
                 <h2 style="color:white;"><b>First of all.. Injection again?</b></h2><br>
-                <p> As you known, Injection is to input something into an object. 
-                    For example, in the Covid-19 pandemic, we all have to injected vaccine in order to prevent / mitigate the 
+                <p> I will again tell you this example: As you known, Injection is to input something into an object. 
+                    In the Covid-19 pandemic, we all have to injected vaccine in order to prevent / mitigate the 
                     consequence of the Corona Virus. That is injection, a way to provide some instruction for an object to do 
                     something. For the above example, the instruction is the vaccine, that is to tell the body how to deal with the 
                     Corona Virus.
@@ -124,24 +124,29 @@
                     <img src="../navbar/images/injection.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
                     <br>
 
-                    Back to our module, let's me review introduce you how to basically call a OS Command in PHP:
+                    Back to our module, let's me introduce you how to basically call a OS Command in PHP:
 					<br><br>
                     <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">&lt;?php system("id"); ?&gt;</code>
                     <br>
-                    This is just a normal query, right? Let's get to something more complicated, to select out the username "<b>conmeo</b>", this query will turn out:
+                    This is just a very basic OS command, the <b>system()</b> function in php would run a OS command, which will then execute the "id" command and return the group, user group, etc. of the our current user, right? 
+                    <br>
+                    Let's get to something more complicated, in order to check a domain to see if it is alive or not, we often use <b>ping</b> command with the host domain, here is an example:
                     <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="conmeo";</code>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">&lt;?php system("ping google.com"); ?&gt;</code>
+                    <br>
+                    Now, let's move back to our PHP programming language: how a beginner-level PHP programmer would code this OS command function?
+                    <br><br>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">&lt;?php system("ping <span style="color: yellow;">$user_input</span>"); ?&gt;</code>
                     <br>
                     Here, some explanation for the syntax:
                     <ul style="list-type-style:circle;">
-                        <li><b>SELECT</b>: is used to retrieve rows selected from one or more tables</li>
-                        <li><b>FROM</b>: indicates the table or tables from which to retrieve rows</li>
-                        <li><b>WHERE</b>: indicates the condition or conditions that rows must satisfy to be selected</li>
+                        <li><b>&lt;?php  ?&gt;</b>: is used to mark the PHP code would execute</li>
+                        <li><b>system()</b>: a PHP OS Command function call</li>
+                        <li><b>ping</b>: A OS Command which continuosly send ICMP packet to the host destination</li>
                     </ul>
-                    <b>These information is retrieve from: <a href="https://dev.mysql.com/doc/refman/8.0/en/introduction.html">MySQL Documentation</a></b>
+                    Here is just the basic syntax of how to code a OS Command function in PHP, which will allow users to perform the "ping" action.
                     <br>
-                    Here is just the basic syntax of MySQL, if you want to get other username, just replace the "conmeo" with the value you want.
-                    Now let's move to the next section
+                    Now let's move to the next section.
                     <br>
 				</p>
             </div>
@@ -157,51 +162,46 @@
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>First look at SQL Injection</b></h2><br>
-                <p> As I said before, Injection is to input something into an object.
+                <h2 style="color:white;"><b>First look at Command Injection (also known as Shell Injection)</b></h2><br>
+                <p> OS Command Injection is one of the most easiest hacking to learn, but have the highest dangerous security level 
+                    As I said before, Injection is to input something into an object.
                     <br>
-                    In this case, the object is <b>MySQL syntax</b>, so if an attacker try to input some instruction into the MySQL query?
+                    In this case, the object is <b>OS Command</b>, so if an attacker try to input some instruction into the command which is being executed?
                     <br>
-                    Let's make an example, if a website allows users to search for the username of other users, then the value of useranme column
-                    would be controlled by users
-                    <br>
-                    As you know, when there is a field that is controlled by out users, then that field would be called <b>Untrusted Data</b>
+                    Let's get back to the above example, in this case, the <b>$user_input</b> would be the <b>Untrusted Data</b> which is being controlled by users
 
 					<br><br>
-                    <img src="../navbar/images/hacker.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;float:left;"><img src="../navbar/images/database.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <img src="../navbar/images/hacker.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;float:left;"><img src="../navbar/images/command.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
                     <br>
 
-                    Let's take a look again at our query:
+                    Let's take a look again at the ping function:
 					<br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="conmeo";</code>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">&lt;?php system("ping -c3 <span style="color: yellow;">$user_input</span>"); ?&gt;</code>
                     <br>
-                    In this query, the double quotes are the instruction, which tell the database that the value between the double quotes would be a string.
+                    Now, if the attacker input the value: <code style="color: red;">google.com; id</code>
                     <br>
-                    Now, if the attacker input the value: <code style="color: red;">" or 1=1 #</code>
-                    <br>
-                    The query now becomes:
+                    The command now becomes:
                     <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">" or 1=1; #</b><b style="color: grey;">";</b></code>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">&lt;?php system("ping -c3 <span style="color: red;">google.com; id</span>"); ?&gt;</b></code>
                     <br>
-                    The database which handles the query has no clue to distinguish between attacker's input and query syntax / instruction.
+                    The PHP / OS which execute the command have no clue to distinguish between attacker's input and OS command syntax / instruction.
                     <br>
-                    In the view of database, it will consider to select the username " " (empty value), and then return all the data from the "users" table 
-                    thanks to the condition <b>OR 1=1</b>, and then all the syntax behind would be comment out by the <b>"#"</b>.
+                    In the view of PHP / OS, it will try to first execute the command "<b>ping google.com</b>", next, the semi-colon, which is a really important instruction in OS Command, which tells the object executing the command
+                    that: "The command ends here, the part behind the semi-colon would be the new command". And then execute the next command "<b>id</b>"
                     <br><br>
-                    By this way, the attacker could steal all the data that should not be approach by him 
+                    By this way, the attacker could execute any arbitrary OS commands on the server, and typically fully compromise the application and all its data.
                     <br>
-                    Another example, now this time, if the attacker input into the username field: <code style="color:red;">not_exist" or username="admin</code>
+                    Another example, now this time, if the attacker input into the <b>$user_input</b>: <code style="color:red;">; shutdown</code>
                     <br>
-                    The query will now become:
+                    The command will now become:
                     <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="<b style="color:red;">" or username="admin</b>";</code>
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">&lt;?php system("ping -c3 <span style="color: red;">; shutdown</span>"); ?&gt;</code>
                     <br>
-                    Assume that in the "users" table, there are so many columns such as "password", "username", "email", etc.
+                    Obviously that the first command before the semi-colon is not executed, because the attacker doesn't add any host, so the <b>ping</b> would not know the place to send ICMP packet.
                     <br>
-                    By this way, the attacker can get all the above information, which is really sensitive.
-                    Which the password retrieved from the above query, the attacker can now login and fake as an admin.
-                    <br><br>
-                    From now on, the attacker can gain access to every speacial features of the website.
+                    But, as you can see, the so bad attacker injected a <b>shutdown</b> command behind the semi-colon, which will tell the server to shutdown and stop every actions / operations.
+                    By this way, this attacker could bring down the whole server of a company / business.
+
                     <br><br>
                     <img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
                     <br>

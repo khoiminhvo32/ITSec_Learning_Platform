@@ -19,3 +19,7 @@ exports.getSQLi = (req, res, next) => {
 exports.getCMDi = (req, res, next) => {
     return res.render("command-injection");
 }
+
+exports.getFileUpload = (req, res, next) => {
+    return res.render("file-upload-vulnerabilities");
+}

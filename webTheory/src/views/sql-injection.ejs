@@ -114,7 +114,12 @@
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
                 <h2 style="color:white;"><b>First of all.. What is Injection?</b></h2><br>
-                <p> As you known, Injection is to input something into an object. 
+                <p> The reason why I choose SQL Injection as the first module you would learn is because this bug is really common out there - in the real world
+                    , and very well known for every cyber security engineers. 
+                    <br>
+                    A successful SQL Injection attack could lead to thousands of users' information leakage, more serious, could lead to Remote Code Execution.
+                    <br>
+                    As you known, Injection is to input something into an object. 
                     For example, in the Covid-19 pandemic, we all have to injected vaccine in order to prevent / mitigate the 
                     consequence of the Corona Virus. That is injection, a way to provide some instruction for an object to do 
                     something. For the above example, the instruction is the vaccine, that is to tell the body how to deal with the 
@@ -172,7 +177,16 @@
                     <img src="../navbar/images/hacker.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;float:left;"><img src="../navbar/images/database.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
                     <br>
 
-                    Let's take a look again at our query:
+                    Come to this, I will show you how a really basic syntax of a PHP beginner-level programmers would code to query to a database:
+                    <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">$query = <span style="color: red;">'</span>SELECT * FROM users WHERE username="<span style="color: red;">'</span> . $user_input . <span style="color: yellow;">'</span>"<span style="color: yellow;">'</span>;
+                                                                                                                     <br>$db_result = $database->query($query);</code>
+                    <br>
+
+                    The Developer uses a technique called "String Concatenation" to add the <b>$user_input</b> variable to the query string. Then, he uses that strings to query to database. Let's together 
+                    see if this style of code would bring any threats which causes damage to our system.
+                    <br>
+
+                    Let's take a look again at our query if a user want to get information of the "conmeo" username:
 					<br><br>
                     <code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">SELECT * FROM users WHERE username="conmeo";</code>
                     <br>

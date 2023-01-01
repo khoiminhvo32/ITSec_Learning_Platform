@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>ITSec Learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- AOS - Animated on Scroll CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+	
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet"> <!-- font -->
+
+    <link rel="stylesheet" href="../solid/dist/css/style.css"> <!-- static CSS -->
+
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> <!-- font -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- font -->
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> <!-- font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- font -->
+
+    <!-- favicon -->
+    <link rel="icon" href="../navbar/images/hacker.png">
+
+	<link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+	
+	<link rel="stylesheet" href="../navbar/css/style.css">
+
+	<link rel="stylesheet" href="../navbar/css/bootstrap4-neon-glow.css">
+
+	</head>
+	<body>
+		
+		<br>
+		<div class="container" id="itsec">
+			<div class="row justify-content-center">
+			</div>
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		    <div class="container">
+		    	<a class="navbar-brand" href="/">ITSec Platform</a>
+		    	<div class="social-media order-lg-last">
+		    		<p class="mb-0 d-flex">
+		    			<a href="https://www.facebook.com/khoi.vo.104/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+		    		</p>
+	        </div>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="fa fa-bars"></span> Menu
+		      </button>
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		        <ul class="navbar-nav ml-auto mr-md-3">
+		        	<li class="nav-item active"><a href="../academy" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="#about-me" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+		          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+    <!-- END nav -->
+  </div>
+
+<br><br><br><br><br>
+<div class="header">
+	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">File Upload Vulnerabilitie<span class="vim-caret">s</span></h1><br>
+    <p style="text-align:center; color:white;" data-aos="fade-in">Be careful with every uploaded function</p>
+</div>
+<br>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Requirement</b></h2><br>
+                <p> In order to get the best experience learning this Vulnerability, you should have basic knowledge in 
+                    how to build an upload function using <b>HTML</b><br>
+
+					<br>
+                    <img src="../navbar/images/upload-function.png" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
+                    <br>
+					
+				<b>Learn it here: <a href="https://www.w3schools.com/php/php_file_upload.asp">W3Schoolds - PHP file upload</a></b><br><br>
+                If you have learned this vulnerability before, why not going to solve my <a href="http://localhost:8000/">challenges here</a>?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>What is File Upload Vulnerabiliy?</b></h2><br>
+                <p> In this module, you'll learn how simple file upload functions can be used as a powerful vector for a number of high-severity attacks.
+                    File upload vulnerabilities are when a web server allows users to upload files to its filesystem without sufficiently validating things like their name, type, contents, or size. 
+                    Failing to properly enforce restrictions on these could mean that even a basic image upload function can be used to upload arbitrary and potentially dangerous files instead. 
+                    This could even include server-side script files that enable remote code execution. In some cases, the act of uploading the file is in itself enough to cause damage.
+
+					<br>
+                    <img src="../navbar/images/file-upload.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>What is the impact of file upload vulnerabilities</b></h2><br>
+                <p> The impact of file upload vulnerabilities generally depends on two key factors: 
+                    <ul style="list-type-style:circle;">
+                        <li>which aspect of the file the website fails to validate properly, whether that be its size, type, contents, and so on.</li>
+                        <li>What restrictions are imposed on the file once it has been successfully uploaded.</li>
+                    </ul>
+                    In the worst case scenario, the file's type isn't validated properly, and the server configuration allows certain types of file (such as .php) to be executed as code. 
+                    In this case, an attacker could potentially upload a server-side web shell, effectively granting them full control over the server.
+                    <br><br>
+                    More details, the <b>Untrusted Data</b> in this module is exactly the files uploaded by users
+                    <br>
+                    So, this will come to the next question: "<b>How do file upload vulnerabilities arise?</b>"
+
+					<br><br>
+                    <img src="../navbar/images/file-question.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>How do file upload vulnerabilities arise?</b></h2><br>
+                <p> In this module, you'll learn how simple file upload functions can be used as a powerful vector for a number of high-severity attacks.
+                    File upload vulnerabilities are when a web server allows users to upload files to its filesystem without sufficiently validating things like their name, type, contents, or size. 
+                    Failing to properly enforce restrictions on these could mean that even a basic image upload function can be used to upload arbitrary and potentially dangerous files instead. 
+                    This could even include server-side script files that enable remote code execution. In some cases, the act of uploading the file is in itself enough to cause damage.
+
+					<br>
+                    <img src="../navbar/images/file-upload.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<style>
+	.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+.challenge {
+	--x: 50%;
+	--y: 50%;
+	
+	position: relative;
+	appearance: none;
+	padding: 1em 2em;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	border-radius: 100px;
+	
+	border: 4px solid transparent;
+	background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+<div class="footer-basic" data-aos="fade-in">
+	<footer>
+		<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com/khoi.vo.104/"><i class="icon ion-social-facebook"></i></a></div>
+		<ul class="list-inline">
+			<li class="list-inline-item"><a href="#itsec">Home</a></li>
+			<li class="list-inline-item"><a href="academy">Academy</a></li>
+			<li class="list-inline-item"><a href="#about-me">About</a></li>
+			<li class="list-inline-item"><a href="#">Terms</a></li>
+			<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+		</ul>
+		<p class="copyright">MinKhoy © 2022</p>
+	</footer>
+</div>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../navbar/js/jquery.min.js"></script>
+  <script src="../navbar/js/popper.js"></script>
+  <script src="../navbar/js/bootstrap.min.js"></script>
+  <script src="../navbar/js/main.js"></script>
+  <!-- AOS - Animated on Scroll JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+	AOS.init();
+  </script>
+
+	</body>
+</html>
+
