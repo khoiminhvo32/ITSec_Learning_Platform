@@ -185,6 +185,58 @@
 	<div class="divider div-transparent div-arrow-down"></div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>So.. How do web servers handle requests for static files?</b></h2><br>
+                <p> Before we look at how to exploit file upload vulnerabilities, it's important that you have a basic understanding of how servers handle requests for static files
+                    <ul style="list-type-style:circle;">
+                        <li>If this file type is non-executable, such as an image or a static HTML page, the server may just send the file's contents to the client in an HTTP response.</li>
+                        <li>If the file type is executable, such as a PHP file, and the server is configured to execute files of this type, it will assign variables based on the headers and parameters in the HTTP request before running the script. The resulting output may then be sent to the client in an HTTP response.</li>
+                        <li>If the file type is executable, but the server is not configured to execute files of this type, it will generally respond with an error. However, in some cases, the contents of the file may still be served to the client as plain text. Such misconfigurations can occasionally be exploited to leak source code and other sensitive information.</li>
+                    </ul>
+					<br>
+                    <img src="../navbar/images/file-upload.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Let's get into practical exercise</b></h2><br>
+                <p> Let's go role playing, you will now be acting as a hacker, who are trying to upload a webshell to the server
+                    <br>
+                    At the time you successfully attach the webshell, the server would be under your control
+                </p>    
+                <br>
+                    <img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+                    <div class="challenge" style="text-align: center;">
+                        <br>
+                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
+                        <h3 style="text-align:center;"><a class="button button-primary button-wide-mobile" href="http://localhost:8000/" style="border-radius: 25px;">CTFd Platform</a>
+                        <br>
+                    </div>
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
 <style>
 	.wrapper
 {
