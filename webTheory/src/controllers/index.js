@@ -1,4 +1,4 @@
-const users = require("../models/user");
+// const users = require("../models/user");
 
 exports.getIndex = (req, res, next) => {
     return res.render("index");
@@ -26,4 +26,8 @@ exports.getFileUpload = (req, res, next) => {
 
 exports.getBrokenAuth = (req, res, next) => {
     return res.render("broken-authentication");
+}
+
+exports.getXSS = (req, res, next) => {
+    return res.render("xss");
 }

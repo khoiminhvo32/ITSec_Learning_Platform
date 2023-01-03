@@ -9,5 +9,6 @@ router.get("/academy/sql-injection", indexController.getSQLi);
 router.get("/academy/command-injection", indexController.getCMDi);
 router.get("/academy/file-upload-vulnerabilities", indexController.getFileUpload);
 router.get("/academy/broken-authentication", indexController.getBrokenAuth);
+router.get("/academy/cross-site-scripting", indexController.getXSS);
 
 module.exports = router;
