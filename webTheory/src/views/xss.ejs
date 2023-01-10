@@ -136,11 +136,15 @@
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>Do you know the.. difference between authentication and authorization?</b></h2><br>
-                <p> Authentication is the process of verifying that a user really <b>is who they claim to be</b>, whereas authorization involves verifying whether a user <b>is allowed to do something</b>
-					(You will want to learn some security flaws about authorization in the future).
+                <h2 style="color:white;"><b>After all the way.. Injection again?</b></h2><br>
+                <p> I have told you so much about Injection (Ex: Covid-19 pandemic.. For more information, please go back to <a href=/academy/sql-injection>SQL Injection</a> and <a href=/academy/command-injection>Command Injection</a>)
+					, so in this case, the object we want to inject is HTML.
+
 					<br><br><br>
-					<img src="../navbar/images/fingerprint.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;float:left;"><img src="../navbar/images/authorization.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+					<img src="../navbar/images/injection.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+					<br><br>
+					A successful XSS (HTML Injection) attack can cause the web interface to be changed by the hacker, or execute mallicious JavaScript in the client browser 
+					which can leads to many phising and Account - Take - Over consequences (I will go more detail below).
                 </p>
             </div>
         </div>
@@ -155,20 +159,9 @@
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>Some very common technique</b></h2><br>
-                <p> If the website does not have rate limit or IP-blocked or something like this, so you should try some of the below methods:
-					<ul style="list-type-style:circle;">
-                        <li>Account credentials brute-forcing</li>
-                        <li>Try to manipulate the 2FA logic.</li>
-                        <li>Pay some attention to the Cookie.</li>
-                    </ul>
-					<br>
-					<div class="challenge" style="text-align: center;">
-                        <br>
-                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
-                        <h3 style="text-align:center;"><a class="button button-primary button-wide-mobile" href="http://localhost:8000/" style="border-radius: 25px;">CTFd Platform</a>
-                        <br>
-                    </div>
+                <h2 style="color:white;"><b>A general view of HTML Injection</b></h2><br>
+                <p> Let's take a look at a concrete situation:
+
                 </p>
             </div>
         </div>
