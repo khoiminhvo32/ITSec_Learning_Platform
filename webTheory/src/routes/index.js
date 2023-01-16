@@ -11,5 +11,6 @@ router.get("/academy/file-upload-vulnerabilities", indexController.getFileUpload
 router.get("/academy/broken-authentication", indexController.getBrokenAuth);
 router.get("/academy/cross-site-scripting", indexController.getXSS);
 router.get("/academy/broken-access-control", indexController.getIDOR);
+router.get("/academy/path-traversal", indexController.getPathTraversal);
 
 module.exports = router;

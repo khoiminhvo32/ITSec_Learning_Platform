@@ -35,3 +35,7 @@ exports.getXSS = (req, res, next) => {
 exports.getIDOR = (req, res, next) => {
     return res.render("idor");
 }
+
+exports.getPathTraversal = (req, res, next) => {
+    return res.render("path-traversal");
+}
