@@ -138,13 +138,13 @@
             <div class="ht-tm-componentsblock">
                 <h2 style="color:white;"><b>After all the way.. Injection again?</b></h2><br>
                 <p> I have told you so much about Injection (Ex: Covid-19 pandemic.. For more information, please go back to <a href=/academy/sql-injection>SQL Injection</a> and <a href=/academy/command-injection>Command Injection</a>)
-					, so in this case, the object we want to inject is HTML.
+					, so in this case, the object we want to inject something is HTML.
 
 					<br><br><br>
 					<img src="../navbar/images/injection.png" style="display:block;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
 					<br><br>
 					A successful XSS (HTML Injection) attack can cause the web interface to be changed by the hacker, or execute mallicious JavaScript in the client browser 
-					which can leads to many phising and Account - Take - Over consequences (I will go more detail below).
+					which can leads to many phising or Account - Take - Over consequences (I will go more detail below).
                 </p>
             </div>
         </div>
@@ -159,9 +159,48 @@
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>A general view of HTML Injection</b></h2><br>
-                <p> Let's take a look at a concrete situation:
-
+                <h2 style="color:white;"><b>Let's make an example</b></h2><br>
+                <p> Consider that a website let users input their name, and then this website will print out the name on the screen. This is a basic PHP code of how to do this:
+					<ul style="list-type-style:circle;">
+                        <li>Let users input their name using GET Parameter:</li>
+					</ul>
+					<code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">$username = $_GET['user_input'];</code>
+					<br>
+					<ul style="list-type-style:circle;">
+                        <li>Print out the username:</li>
+					</ul>
+					<code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">echo $username;</code>
+					<br>
+					By this way of coding, with normal user, they will just only input the username they want - for example, in my case - MinKhoy
+					<br>
+					Now, the website will just printout the <b>'MinKhoy'</b> word.
+					<br><br>
+					So.. How about a hacker, what if they input something like HTML tags?
+					<br>
+					If the hacker inputs the tag <b>&lt;h1&gt;</b>, what will happen?
+					<br>
+					Let's take a look at the code again:
+					<br><br>
+					<code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:larger;">echo '<span style="color: red;">&lt;h1&gt;Make the words bigger&lt;/h1&gt;</span>';</code>
+					<br>
+					As you can easily see, the PHP will just do its jobs - printout the whole things in the <b>$username</b> variable.
+					<br><br>
+					At this time, the web server will handle and render the content, which contains the &lt;h1&gt; tag, to print out and sendback to users, which will make the sequence <b>"Make the words bigger"</b> become truthly bigger - 
+					which is a really important signal of a exploitable <b>HTML Injection</b>.
+					<br><br>
+					The attacker can now input something more evil, such as tag <b>&lt;script&gt;</b> in order to execute JavaScript <b style="font-size:x-large ;">ON USER'S BROWSER</b> (That's why this is a Client - Side Vulnerability), which allow the attacker to get user's cookies and everthing which is stored in the browsers.
+					<br><br>
+					As you know, the cookies are used for identification on the Internet, so if the attacker has your cookies, they can actually becomes you on the Internet (There are so much more consequences of this security flaws, but this one is the most common
+					, beside there are something like Redirect, Phising...).
+					<br><br><br>
+                    <img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+                    <div class="challenge" style="text-align: center;">
+                        <br>
+                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
+                        <h3 style="text-align:center;"><a class="button button-primary button-wide-mobile" href="http://localhost:8000/" style="border-radius: 25px;">CTFd Platform</a>
+                        <br>
+                    </div>
                 </p>
             </div>
         </div>
