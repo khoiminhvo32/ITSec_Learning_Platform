@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>ITSec Learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- AOS - Animated on Scroll CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+	
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet"> <!-- font -->
+
+    <link rel="stylesheet" href="../solid/dist/css/style.css"> <!-- static CSS -->
+
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> <!-- font -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- font -->
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> <!-- font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- font -->
+
+    <!-- favicon -->
+    <link rel="icon" href="../navbar/images/hacker.png">
+
+	<link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+	
+	<link rel="stylesheet" href="../navbar/css/style.css">
+
+	<link rel="stylesheet" href="../navbar/css/bootstrap4-neon-glow.css">
+
+	</head>
+	<body>
+		
+		<br>
+		<div class="container" id="itsec">
+			<div class="row justify-content-center">
+			</div>
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		    <div class="container">
+		    	<a class="navbar-brand" href="/">ITSec Platform</a>
+		    	<div class="social-media order-lg-last">
+		    		<p class="mb-0 d-flex">
+		    			<a href="https://www.facebook.com/khoi.vo.104/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+		    		</p>
+	        </div>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="fa fa-bars"></span> Menu
+		      </button>
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		        <ul class="navbar-nav ml-auto mr-md-3">
+		        	<li class="nav-item active"><a href="../academy" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="#about-me" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+		          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+    <!-- END nav -->
+  </div>
+
+<br><br><br><br><br>
+<div class="header">
+	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">Broken Access Contro<span class="vim-caret">l</span></h1><br>
+    <p style="text-align:center; color:white;" data-aos="fade-in">Also known as IDOR - Insecure Direct Object References
+                                                                    <br>A Security Flaw you can learn without Programming Background</p>
+</div>
+<br>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Introduction</b></h2><br>
+                <p> You will notice that in this module, I don't make a "<b>Requirement</b>" section, as the title said everything - this is a 
+                    Security Vulnerability which is really easy to find out, to learn and exploit <b style="font-size:x-large ;">WITHOUT</b> any Coding / Programming Background.
+                    <br><br>
+                    Actually, in the real world, when I was working in CyberJustu and scanning for the Intern CV, I see so many CV with lots of bugs found, I have thought "Wow they're so good, I will pass them in".
+                    <br>
+                    But when I looked deeper into their bugs, I found that most of them were IDOR, and when I ask them about Coding, they're not so good for this. 
+
+					<br>
+                    <img src="../navbar/images/idor.png" style="display:block;margin-left: auto;margin-right: auto;width:60%;height:60%">
+                    <br>
+					
+                    If you have learned this vulnerability before, why not going to solve my <a href="http://localhost:8000/">challenges here</a>?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>So.. What is IDOR?</b></h2><br>
+                <p> Insecure direct object references (IDOR) are a type of access control vulnerability that arises when an application uses user-supplied input to access objects directly. 
+					<br><br>
+					You may feel ridiculous when reading the definition, right?
+					<br>
+					Don't worry, because you are surfing my website, I will simply explain it to you 😁😁😁😁😁
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Let's make an example</b></h2><br>
+                <p> There are many examples of access control vulnerabilities where user-controlled parameter values are used to access resources or functions directly.
+					<br><br>
+					Consider a website called <b>Fakebook</b> that uses the following URL to access the customer account page, by retrieving information from the back-end database:
+					<br><br>
+					<code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:large;">https://fakebook.com/customer_account?customer_number=14306</code>
+					<br>
+					As you can easily see, the number <b>14306</b> is the unique user's account number, a user can use this number to access their account information page.
+					<br>
+					For each users, the account number would be different.
+					<br>
+					Let's deep into this example:
+					<br>
+					Because the <b>customer_number</b> is the GET parameter, which means that is is totally controlled by the users. So we can define this is an <b>Untrusted Data</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>The magic happens</b></h2><br>
+                <p> So let's rewrite the URL:
+					<br><br>
+					<code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:large;">https://fakebook.com/customer_account?customer_number=<span style="color:red;">user_input</span></code>
+					<br>
+					I think when you are reading to line, you would probably findout something. 
+					<br>
+					So <b>Yes</b>, you are going on the right way.
+					<br><br>
+					If the attacker gotta changes the value of the <b>customer_number</b> GET param, they could then access and read other's account information.
+					<br><br>
+					<code style="display:block;margin-left: auto;margin-right: auto;text-align:center;font-size:large;">https://fakebook.com/customer_account?customer_number=<span style="color:red;">2000</span></code>
+					<br>
+					At this time, the attacker can read the information of the user with account number 2000.
+					<br>
+					Let's consider that there are 10.000 users on the system. When changing the value, the attacker can read all the information of the other 9999 users.
+					<br><br>
+					Moreover, consider that the <b>Admin Account Number</b> would be 1111, the attacker can using a hacking technique called "<b>Brute-Force</b>" to scan through all the account, and they would definitely find out and read all 
+					sensitive information of the Admin.
+					<br><br>
+					From now on, the attacker can use these information to do evil things, which can also allow the attacker to deeper exploit the web server.
+					<br><br>
+					<img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+                    <div class="challenge" style="text-align: center;">
+                        <br>
+                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
+                        <h3 style="text-align:center;"><a class="button button-primary button-wide-mobile" href="http://localhost:8000/" style="border-radius: 25px;">CTFd Platform</a>
+                        <br>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<style>
+	.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+.challenge {
+	--x: 50%;
+	--y: 50%;
+	
+	position: relative;
+	appearance: none;
+	padding: 1em 2em;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	border-radius: 100px;
+	
+	border: 4px solid transparent;
+	background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+<div class="footer-basic" data-aos="fade-in">
+	<footer>
+		<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com/khoi.vo.104/"><i class="icon ion-social-facebook"></i></a></div>
+		<ul class="list-inline">
+			<li class="list-inline-item"><a href="#itsec">Home</a></li>
+			<li class="list-inline-item"><a href="academy">Academy</a></li>
+			<li class="list-inline-item"><a href="#about-me">About</a></li>
+			<li class="list-inline-item"><a href="#">Terms</a></li>
+			<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+		</ul>
+		<p class="copyright">MinKhoy © 2022</p>
+	</footer>
+</div>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../navbar/js/jquery.min.js"></script>
+  <script src="../navbar/js/popper.js"></script>
+  <script src="../navbar/js/bootstrap.min.js"></script>
+  <script src="../navbar/js/main.js"></script>
+  <!-- AOS - Animated on Scroll JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+	AOS.init();
+  </script>
+
+	</body>
+</html>
+

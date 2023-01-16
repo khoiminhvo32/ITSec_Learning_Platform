@@ -10,5 +10,6 @@ router.get("/academy/command-injection", indexController.getCMDi);
 router.get("/academy/file-upload-vulnerabilities", indexController.getFileUpload);
 router.get("/academy/broken-authentication", indexController.getBrokenAuth);
 router.get("/academy/cross-site-scripting", indexController.getXSS);
+router.get("/academy/broken-access-control", indexController.getIDOR);
 
 module.exports = router;

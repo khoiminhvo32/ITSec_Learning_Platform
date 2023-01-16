@@ -31,3 +31,7 @@ exports.getBrokenAuth = (req, res, next) => {
 exports.getXSS = (req, res, next) => {
     return res.render("xss");
 }
+
+exports.getIDOR = (req, res, next) => {
+    return res.render("idor");
+}
