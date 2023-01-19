@@ -39,3 +39,11 @@ exports.getIDOR = (req, res, next) => {
 exports.getPathTraversal = (req, res, next) => {
     return res.render("path-traversal");
 }
+
+exports.getInfoDisclosure = (req, res, next) => {
+    return res.render("information-disclosure");
+}
+
+exports.getSSRF = (req, res, next) => {
+    return res.render("ssrf");
+}

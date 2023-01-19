@@ -12,5 +12,7 @@ router.get("/academy/broken-authentication", indexController.getBrokenAuth);
 router.get("/academy/cross-site-scripting", indexController.getXSS);
 router.get("/academy/broken-access-control", indexController.getIDOR);
 router.get("/academy/path-traversal", indexController.getPathTraversal);
+router.get("/academy/information-disclosure", indexController.getInfoDisclosure);
+router.get("/academy/server-side-request-forgery", indexController.getSSRF);
 
 module.exports = router;
