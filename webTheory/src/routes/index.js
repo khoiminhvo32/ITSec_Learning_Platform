@@ -9,6 +9,7 @@ router.get("/academy/sql-injection", indexController.getSQLi);
 router.get("/academy/command-injection", indexController.getCMDi);
 router.get("/academy/cross-site-scripting", indexController.getXSS);
 router.get("/academy/broken-access-control", indexController.getIDOR);
+router.get("/academy/advanced-challenges", indexController.getAdvanced);
 router.get("/academy/path-traversal", indexController.getPathTraversal);
 router.get("/academy/server-side-request-forgery", indexController.getSSRF);
 router.get("/academy/broken-authentication", indexController.getBrokenAuth);

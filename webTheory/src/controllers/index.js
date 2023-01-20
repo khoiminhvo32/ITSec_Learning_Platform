@@ -47,3 +47,7 @@ exports.getInfoDisclosure = (req, res, next) => {
 exports.getSSRF = (req, res, next) => {
     return res.render("ssrf");
 }
+
+exports.getAdvanced = (req, res, next) => {
+    return res.render("advanced-challenges");
+}

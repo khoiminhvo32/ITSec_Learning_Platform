@@ -76,8 +76,8 @@
 
 <br><br><br><br><br>
 <div class="header">
-	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">Server - Side Request Forger<span class="vim-caret">y</span></h1><br>
-    <p style="text-align:center; color:white;" data-aos="fade-in">A bug that would able to open and chain more exploits together</p>
+	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">Advanced Challenge<span class="vim-caret">s</span></h1><br>
+    <p style="text-align:center; color:white;" data-aos="fade-in">Let's deep into more advanced technique</p>
 </div>
 <br>
 
@@ -89,107 +89,25 @@
     <div class="row">
         <div class="col-md-12 bootstrap snippets">
             <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>Introduction - What is Server - Side Request Forgery (SSRF)?</b></h2><br>
-                <p> SSRF is a web security vulnerability that allows an attacker to  make requests to an unintended location that is <b style="font-size:larger ;">NOT</b> open for usual users.
+                <h2 style="color:white;"><b>More advanced challenges written by me</b></h2><br>
+                <p> Besides all the basic challenges I have introduced, there are also some advanced challenges which chain lots of technique together.
+                    <br>
+                    In the real world, you don't always simply find the vulnerabilities that is introduced in my website. But you have to bypass filter, firewall in order to achieve your goal.
+                    <br>
+                    As a pentester, you will have to increase the impact of the vulnerabilities to the highest, so there are some cases that you have to chain different kinds of bugs together.
                     <br><br>
-                    In a typical SSRF attack, the attacker might cause the server to make a connection to internal-only services within the organization's infrastructure.
+                    <img src="../navbar/images/hacking.png" style="display:flex;margin-left: auto;margin-right: auto;width: 60%;height: 60%;">
                     <br>
-                    In other cases, they may be able to force the server to connect to arbitrary external systems, potentially leaking sensitive data such as authorization credentials.
-					
-					<br><br>
-                    <img src="../navbar/images/ssrf.jpg" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="wrapper">
-	<div class="divider div-transparent div-arrow-down"></div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 bootstrap snippets">
-            <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>Requirement</b></h2><br>
-                <p> In order to get the best experience learning this Vulnerability, you should have basic knowledge in 
-                    <b>URL Structure</b><br>
-
-					<br>
-                    <img src="../navbar/images/URL.jpg" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
-                    <br>
-					
-				<b>For more information: <a href="https://www.hostinger.com/tutorials/what-is-a-url">What is a URL</a></b><br><br>
-                If you have learned this vulnerability before, why not going to solve my <a href="http://localhost:8000/">challenges here</a>?
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="wrapper">
-	<div class="divider div-transparent div-arrow-down"></div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 bootstrap snippets">
-            <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>What can SSRF do?</b></h2><br>
-                <p> A successful SSRF attack can often result in unauthorized actions or access to data within the organization, either in the vulnerable application itself or on other back-end systems that the application can communicate with. 
-                    In some situations, the SSRF vulnerability might allow an attacker to perform arbitrary command execution.
-				</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="wrapper">
-	<div class="divider div-transparent div-arrow-down"></div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 bootstrap snippets">
-            <div class="ht-tm-componentsblock">
-                <h2 style="color:white;"><b>SSRF against the server itself, but.. Internal?</b></h2><br>
-                <p> In an SSRF attack against the server itself, the attacker induces the application to make an HTTP request back to the server that is hosting the application.
-                    <br>
-                    To be simple, let's look at this request:
-
-					<br><br>
-					<code style="display:block;margin-left: auto;margin-right: auto;font-size:larger;">&nbsp;POST /product/stock HTTP/1.0<br>
-                                                                                                       &nbsp;Content-Type: application/x-www-form-urlencoded<br><br>
-                                                                                                       
-                                                                                                       &nbsp;stockApi=http://stock.my-shop.com/product/stock/check?productId=6&storeId=1</code>
-					<br>
-                    Consider a shopping application that lets the user view whether an item is in stock in a particular store. To provide the stock information, the application must query to the back-end API with the <b>productID</b> and <b>storeID</b> information.
-                    <br><br>
-                    For the above example, the POST HTTP packet causes the server to make a request to the specified URL, retrieve the stock status, and return this to the user.
-                    <br>
-                    As you known, the HTTP Request is all controlled by users, which means the whole POST HTTP packet is considered Untrusted Data.
-                    <br>
-                    So.. What if the attacker modifies and changes the URL that the server would request to gain stock information?
-                    <br><br>
-                    <code style="display:block;margin-left: auto;margin-right: auto;font-size:larger;">&nbsp;POST /product/stock HTTP/1.0<br>
-                                                                                                       &nbsp;Content-Type: application/x-www-form-urlencoded<br><br>
-                        
-                                                                                                       &nbsp;stockApi=<span style="color: red;">http://localhost/admin</span></code>
-                    <br>
-                    At this point, the server will fetch the contents of the <b>/admin</b> endpoint and return it to the user, which can only be accessed by <b>Internal</b>.
-                    <br>
-                    From now on, the attacker can access the <b>/admin</b> panel and wider his / her attack.
-                    <br><br>
-                    <img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
-                    <br>
+                    When you back to my CTFD training place, you would definitely find a category called "<b>Advanced Challenges</b>". Let's see if you can solve them all? 😁👌
+                    <br><br><br>
                     <div class="challenge" style="text-align: center;">
                         <br>
-                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
+                        <h3 style="color:white;"><b>CTFD Challenges</b></h3>
                         <h3 style="text-align:center;"><a class="button button-primary button-wide-mobile" href="http://localhost:8000/" style="border-radius: 25px;">CTFd Platform</a>
                         <br>
                     </div>
-					</p>
+                </p>
             </div>
         </div>
     </div>
@@ -198,6 +116,8 @@
 <div class="wrapper">
 	<div class="divider div-transparent div-arrow-down"></div>
 </div>
+
+
 
 <style>
 	.wrapper
