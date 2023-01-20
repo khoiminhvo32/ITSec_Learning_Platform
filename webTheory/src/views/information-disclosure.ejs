@@ -1,1 +1,286 @@
-<h1>Information Disclosure</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>ITSec Learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- AOS - Animated on Scroll CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+	
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet"> <!-- font -->
+
+    <link rel="stylesheet" href="../solid/dist/css/style.css"> <!-- static CSS -->
+
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> <!-- font -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- font -->
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> <!-- font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- font -->
+
+    <!-- favicon -->
+    <link rel="icon" href="../navbar/images/hacker.png">
+
+	<link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+	
+	<link rel="stylesheet" href="../navbar/css/style.css">
+
+	<link rel="stylesheet" href="../navbar/css/bootstrap4-neon-glow.css">
+
+	</head>
+	<body>
+		
+		<br>
+		<div class="container" id="itsec">
+			<div class="row justify-content-center">
+			</div>
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		    <div class="container">
+		    	<a class="navbar-brand" href="/">ITSec Platform</a>
+		    	<div class="social-media order-lg-last">
+		    		<p class="mb-0 d-flex">
+		    			<a href="https://www.facebook.com/khoi.vo.104/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+		    		</p>
+	        </div>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="fa fa-bars"></span> Menu
+		      </button>
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		        <ul class="navbar-nav ml-auto mr-md-3">
+		        	<li class="nav-item active"><a href="../academy" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="#about-me" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+		          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+    <!-- END nav -->
+  </div>
+
+<br><br><br><br><br>
+<div class="header">
+	<h1 class="display-2" style="text-align:center; color:white;" data-aos="fade-in">Information Disclosur<span class="vim-caret">e</span></h1><br>
+    <p style="text-align:center; color:white;" data-aos="fade-in">Maybe there would be something sensitive on the Web Server?</p>
+</div>
+<br>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Introduction</b></h2><br>
+                <p> This vulnerability is also one of Operation Vulnerabilities that is caused by Devs or DevOps.
+                    <br><br>
+                    Here is how I define this vul:
+                    Information Disclosure - also known as information leakage, is when a website unintentionally reveals sensitive information to its users.
+                    <br>
+                    <br>
+                    <img src="../navbar/images/info-leak.jpg" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
+                    <br>
+                    Depends on the context, websites may leak potential information that attackers can take advantages of, for example:
+                    <ul style="list-type-style:circle;">
+                        <li>Data / credentials about other users, such as usernames or financial information.</li>
+                        <li>Sensitive commercial or business data.</li>
+                        <li>Technical details about the website such as <b>source code</b> or <b>debug</b> info.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Requirement</b></h2><br>
+                <p> In order to get the best experience learning this Vulnerability, you should have basic knowledge in 
+                    using Recon tools such as nmap, gobuster, ffuf, arjun... <br>
+
+					<br>
+                    <img src="../navbar/images/recon.png" style="display:block;margin-left: auto;margin-right: auto;width:70%;height:70%">
+                    <br>
+					
+				<b>For more information: <a href="https://intellipaat.com/blog/reconnaissance-in-cyber-security/">Reconnaissance in Cyber Security</a></b><br><br>
+                If you have learned this vulnerability before, why not going to solve my <a href="http://localhost:8000/">challenges here</a>?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>Why did I say the fault is by Devs / DevOps?</b></h2><br>
+                <p> 
+                    <ul style="list-type-style:circle;">
+                        <li><b>Failure to remove internal content from public content</b>. For example, developer comments in markup are sometimes visible to users in the production environment. 🥴</li>
+                        <br>
+                        <li><b>Insecure configuration of the website and related technologies</b>. For example, failing to disable debugging and diagnostic features can sometimes provide attackers with useful tools to help them obtain sensitive information. Default configurations can also leave websites vulnerable, for example, by displaying overly verbose error messages. 🥴🥴</li>
+                        <br>
+                        <li><b>Flawed design and behavior of the application</b>. For example, if a website returns distinct responses when different error states occur, this can also allow attackers to enumerate sensitive data, such as valid user credentials. 🥴🥴🥴</li>
+                    </ul>
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bootstrap snippets">
+            <div class="ht-tm-componentsblock">
+                <h2 style="color:white;"><b>The devil comes..</b></h2><br>
+                <p> 
+                    Information disclosure vulnerabilities can have both a direct and indirect impact depending on the purpose of the website and, 
+                    therefore, what information an attacker is able to obtain. In some cases, the act of disclosing sensitive information alone can have a high impact on the affected parties. 
+                    For example, an online shop leaking its customers' credit card details is likely to have severe consequences.
+                    <br><br>
+                    On the other hand, leaking technical information, such as the directory structure or which third-party frameworks are being used, may have little to no direct impact. 
+                    However, in the wrong hands, this could be the key information required to construct lots of exploits. 
+                    The severity in this case depends on what the attacker is able to do with the information.
+                    <br>
+                    <br><br>
+					<img src="../navbar/images/ded.png" style="display:flex;margin-left: auto;margin-right: auto;width: 20%;height: 20%;">
+                    <br>
+                    <div class="challenge" style="text-align: center;">
+                        <br>
+                        <h3 style="color:white;"><b>Okay that's enough for the theory, let's experience the hacking techniques</b></h3>
+                        <h3 style="text-align:center;"><a class="button button-primary button-wide-mobile" href="http://localhost:8000/" style="border-radius: 25px;">CTFd Platform</a>
+                        <br>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+	<div class="divider div-transparent div-arrow-down"></div>
+</div>
+
+<style>
+	.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+.challenge {
+	--x: 50%;
+	--y: 50%;
+	
+	position: relative;
+	appearance: none;
+	padding: 1em 2em;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	border-radius: 100px;
+	
+	border: 4px solid transparent;
+	background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+<div class="footer-basic" data-aos="fade-in">
+	<footer>
+		<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com/khoi.vo.104/"><i class="icon ion-social-facebook"></i></a></div>
+		<ul class="list-inline">
+			<li class="list-inline-item"><a href="#itsec">Home</a></li>
+			<li class="list-inline-item"><a href="academy">Academy</a></li>
+			<li class="list-inline-item"><a href="#about-me">About</a></li>
+			<li class="list-inline-item"><a href="#">Terms</a></li>
+			<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+		</ul>
+		<p class="copyright">MinKhoy © 2022</p>
+	</footer>
+</div>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../navbar/js/jquery.min.js"></script>
+  <script src="../navbar/js/popper.js"></script>
+  <script src="../navbar/js/bootstrap.min.js"></script>
+  <script src="../navbar/js/main.js"></script>
+  <!-- AOS - Animated on Scroll JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+	AOS.init();
+  </script>
+
+	</body>
+</html>
+
