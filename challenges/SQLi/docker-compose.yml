@@ -17,7 +17,7 @@ services:
         build: ./playground
         restart: unless-stopped
         ports:
-            - 24001:80
+            - 1001:80
         volumes:
             - ./playground/src:/var/www/html
         environment:

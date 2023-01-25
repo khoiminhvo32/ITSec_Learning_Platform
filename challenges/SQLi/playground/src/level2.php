@@ -8,7 +8,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       $row = $db_result->fetch_assoc(); // Get the first row
       $username = $row["username"];
       if ($username === "admin") {
-        $message = "Wow you can log in as admin, here is your flag CBJS{f8ef24f0eebdfa5defdabc632f494f3e}, but how about <a href='level3.php'>THIS LEVEL</a>!";
+        $message = "Wow you can log in as admin, here is your flag <b>VIS{Just_Ez_S3mi_C0l0n_ByPass}</b>, but how about <a href='level3.php'>THIS LEVEL</a>!";
       } else
         $message = "You log in as $username, but then what? You are not an admin";
     } else {

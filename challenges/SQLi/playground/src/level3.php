@@ -2,21 +2,17 @@
 if (isset($_POST["username"]) && isset($_POST["password"])) {
   try {
     include "db.php";
-    $sql = "SELECT username, password FROM users WHERE username='" . $_POST["username"] . "'";
+    $sql = "SELECT username FROM users WHERE username=\"" . $_POST["username"] . "\" AND password=MD5(\"" . $_POST["password"] . "\")";
     $db_result = $database->query($sql);
     if ($db_result->num_rows > 0) {
       $row = $db_result->fetch_assoc(); // Get the first row
-      $password = $row["password"];
-      if ($password === $_POST["password"]) {
-        $username = $row["username"];
-        if ($username === "admin") {
-          $message = "Wow you can log in as admin, here is your flag CBJS{3fa996e38acc675ae51fef858dc35eb3}, but how about <a href='level5.php'>THIS LEVEL</a>!";
-        } else
-          $message = "You log in as $username, but then what? You are not an admin";
+      $username = $row["username"];
+      if ($username === "admin") {
+        $message = "Wow you can log in as admin, but I want to get all the information of users..";
       } else
-        $message = "Wrong username or password";
+        $message = "You log in as $username, but then what? You still don't have any info of users's table";
     } else {
-      $message = "Username not found";
+      $message = "Wrong username or password";
     }
   } catch (mysqli_sql_exception $e) {
     $message = $e->getMessage();
