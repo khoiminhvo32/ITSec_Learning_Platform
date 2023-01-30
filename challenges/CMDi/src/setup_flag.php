@@ -1,7 +1,6 @@
 <?php
 if(isset($_GET['level'])){
     $level = $_GET['level'];
-    echo "[+] Level: ".$level;
     switch($level){
         case "1":
             system("rm ./flag_*\necho '". getenv("FLAG_LEVEL1") . "' > ./flag_level1");
