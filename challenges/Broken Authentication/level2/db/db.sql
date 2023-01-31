@@ -13,7 +13,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `username` (`username`)
 );
 
-INSERT INTO `users` (`id`, `username`, `password`) VALUES (1, 'conmeo', '0f91cd8b141e007a8912b8e849700633a34a68c6');
+INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES (1, 'conmeo', '4d844e2e58e14a0b377b276065c86036', 'conmeo@vis.edu.vn');
 INSERT INTO `users` (`id`, `username`, `password`) VALUES (2, 'trudie92', 'a2ef8b5adc71e0cdbba60b2fb199510dd0e38fdb');
 INSERT INTO `users` (`id`, `username`, `password`) VALUES (3, 'deckow.vernie', 'aac408a9ea1774e50a14c71c4a526ec1ca310b5c');
 INSERT INTO `users` (`id`, `username`, `password`) VALUES (4, 'alta35', '66ee95fa66e2eabd0906c2c6b4df79aebf92d569');
@@ -56,3 +56,10 @@ INSERT INTO `posts` (`id`, `content`) VALUES (2, 'https://blog.cyberjutsu.io/202
 INSERT INTO `posts` (`id`, `content`) VALUES (3, 'https://blog.cyberjutsu.io/2021/05/13/HTML-sanitizer-vs-XSS/');
 
 DROP TABLE IF EXISTS `secret6`;
+
+DROP TABLE IF EXISTS `2FA-code`;
+
+CREATE TABLE `2FA-code` (
+  `username` varchar(30) NOT NULL,
+  `value` varchar(130) NOT NULL
+);

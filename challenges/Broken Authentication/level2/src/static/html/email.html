@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../static/css/styles.css">
+</head>
+
+<body>        
+  <br/>
+  <br/>
+  <h1 >Broken Authentication Workshop</h3>
+  <h2 style="text-align: center;">Email Page</h2>
+  <form class="form-login" method="post">
+    <div class="container">
+      <label for="uname"><b>Your information:</b></label>
+      <br><br>
+      <span>
+        <?php 
+        echo "<b>Here is your username</b>: " . $_SESSION["email_username"] . "<br>";
+        echo "<b>Your 2FA Verification Code is</b>: " . $_SESSION["2fa-value"] ."<br>";
+        ?>
+      </span>
+      <p style="left: 200px;">Get back to <a href="/2fa-code.php">2FA-code Verification</a></p>
+    </div>
+  </form>
+</body>
+
+</html>

@@ -13,7 +13,7 @@ if (isset($_POST['button'])){
         if ($sth->num_rows > 0) {
             $sth->fetch();
             $_SESSION["username"] = $result;
-            die(header("location: update_password.php"));
+            die(header("location: 2fa-code.php"));
         } else {
             $message = "Username doesn't exist";
         }
