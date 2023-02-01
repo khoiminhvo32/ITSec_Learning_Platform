@@ -12,7 +12,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         if ($sth->num_rows > 0) {
             $sth->fetch();
             if ($result === "admin") {
-                $message = "Wow you can log in as admin, here is your flag <b>VIS{Just_Ez_S3mi_P@ssw0rd_GueSsing}</b>";
+                $message = "Wow you can log in as admin, here is your flag <b>VIS{M@ster_Br0ken_aUth}</b>";
             } else {
                 $message = "You can login as $result, but then what? You are not an admin";
             }
