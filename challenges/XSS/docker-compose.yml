@@ -1,0 +1,31 @@
+version: "3.6"
+services:
+  xss-workshop-level-1:
+    container_name:  xss-workshop-level-1
+    build: ./level1
+    restart: unless-stopped
+    volumes:
+      - ./level1/src:/app
+    ports:
+      - "5001:3000"
+
+  xss-workshop-level-2:
+    container_name:  xss-workshop-level-2
+    build: ./level2
+    restart: unless-stopped
+    volumes:
+      - ./level2/src:/app
+    ports:
+      - "5002:3000"
+
+  xss-workshop-level-3:
+    container_name:  xss-workshop-level-3
+    build: ./level3
+    restart: unless-stopped
+    volumes:
+      - ./level3/src:/app
+    ports:
+      - "5003:3000"
+
+volumes:
+  notused:
