@@ -16,7 +16,7 @@ if (isset($_POST['btn-2fa'])){
     
         $result = $sth->affected_rows;
         if ($result != NULL) {
-            $message_2FA = "Successfully create 2FA-code";
+            $message_2FA = "Successfully create 2FA-code and sent to your Email";
         } else {
             $message_2FA = "Something went wrong!!!";
         }
