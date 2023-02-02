@@ -4,6 +4,7 @@ from CTFd.constants.config import (
     ConfigTypes,
     RegistrationVisibilityTypes,
     ScoreVisibilityTypes,
+    SolutionsVisibilityTypes,
 )
 from CTFd.utils import get_config
 from CTFd.utils.user import authed, is_admin
@@ -16,6 +17,18 @@ def challenges_visible():
     elif v == ChallengeVisibilityTypes.PRIVATE:
         return authed()
     elif v == ChallengeVisibilityTypes.ADMINS:
+        return is_admin()
+
+
+def solutions_visible():
+    v = get_config(ConfigTypes.SOLUTIONS_VISIBILITY)
+    if v == SolutionsVisibilityTypes.PUBLIC:
+        return True
+    elif v == SolutionsVisibilityTypes.PRIVATE:
+        return authed()
+    elif v == ScoreVisibilityTypes.HIDDEN:
+        return False
+    elif v == SolutionsVisibilityTypes.ADMINS:
         return is_admin()
 
 

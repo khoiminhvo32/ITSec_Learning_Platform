@@ -11,6 +11,7 @@ class ConfigTypes(str, RawEnum):
     SCORE_VISIBILITY = "score_visibility"
     ACCOUNT_VISIBILITY = "account_visibility"
     REGISTRATION_VISIBILITY = "registration_visibility"
+    SOLUTIONS_VISIBILITY = "solutions_visibility"
 
 
 @JinjaEnum
@@ -40,6 +41,12 @@ class AccountVisibilityTypes(str, RawEnum):
     PRIVATE = "private"
     ADMINS = "admins"
 
+@JinjaEnum
+class SolutionsVisibilityTypes(str, RawEnum):
+    PUBLIC = "public"
+    PRIVATE = "private"
+    HIDDEN = "hidden"
+    ADMINS = "admins"
 
 @JinjaEnum
 class RegistrationVisibilityTypes(str, RawEnum):

@@ -14,6 +14,7 @@ from CTFd.constants.config import (
     ConfigTypes,
     RegistrationVisibilityTypes,
     ScoreVisibilityTypes,
+    SolutionsVisibilityTypes,
 )
 from CTFd.constants.themes import DEFAULT_THEME
 from CTFd.models import (
@@ -32,6 +33,7 @@ from CTFd.utils import validators
 from CTFd.utils.config import is_setup, is_teams_mode
 from CTFd.utils.config.pages import build_markdown, get_page
 from CTFd.utils.config.visibility import challenges_visible
+from CTFd.utils.config.visibility import solutions_visible
 from CTFd.utils.dates import ctf_ended, ctftime, view_after_ctf
 from CTFd.utils.decorators import authed_only
 from CTFd.utils.email import (

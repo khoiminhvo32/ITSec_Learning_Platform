@@ -8,6 +8,7 @@ from CTFd.constants.config import (
     ConfigTypes,
     RegistrationVisibilityTypes,
     ScoreVisibilityTypes,
+    SolutionsVisibilityTypes,
 )
 from CTFd.utils import get_config
 from CTFd.utils.user import authed, is_admin
@@ -121,3 +122,41 @@ def check_registration_visibility(f):
             abort(404)
 
     return _check_registration_visibility
+
+def check_solutions_visibility(f):
+    @functools.wraps(f)
+    def _check_solutions_visibility(*args, **kwargs):
+        v = get_config(ConfigTypes.SOLUTIONS_VISIBILITY)
+        if v == SolutionsVisibilityTypes.PUBLIC:
+            return f(*args, **kwargs)
+
+        elif v == SolutionsVisibilityTypes.PRIVATE:
+            if authed():
+                return f(*args, **kwargs)
+            else:
+                if request.content_type == "application/json":
+                    abort(403)
+                else:
+                    return redirect(url_for("auth.login", next=request.full_path))
+
+        elif v == SolutionsVisibilityTypes.HIDDEN:
+            if is_admin():
+                return f(*args, **kwargs)
+            else:
+                if request.content_type == "application/json":
+                    abort(403)
+                else:
+                    return (
+                        render_template(
+                            "errors/403.html", error="Solutions are currently hidden"
+                        ),
+                        403,
+                    )
+
+        elif v == SolutionsVisibilityTypes.ADMINS:
+            if is_admin():
+                return f(*args, **kwargs)
+            else:
+                abort(404)
+
+    return _check_solutions_visibility

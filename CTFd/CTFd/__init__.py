@@ -285,6 +285,7 @@ def create_app(config="CTFd.config.Config"):
         from CTFd.api import api
         from CTFd.events import events
         from CTFd.errors import render_error
+        from CTFd.solutions import solutions
 
         app.register_blueprint(views)
         app.register_blueprint(teams)
@@ -294,6 +295,7 @@ def create_app(config="CTFd.config.Config"):
         app.register_blueprint(auth)
         app.register_blueprint(api)
         app.register_blueprint(events)
+        app.register_blueprint(solutions)
 
         app.register_blueprint(admin)
 

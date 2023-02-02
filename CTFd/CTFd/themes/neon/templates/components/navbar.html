@@ -10,6 +10,10 @@
           <a class="text-decoration-none text-light" href="{{ page.route }}">{{ page.title }}</a>
         {% endfor %}
 
+        {% if Configs.solutions_visibility != 'admins' %}
+          <a class="text-decoration-none text-light" href="/solutions">Solutions</a>
+        {% endif %}
+
         {% if Configs.account_visibility != 'admins' %}
           <a class="text-decoration-none text-light" href="{{ url_for('users.listing') }}">Users</a>
           {% if Configs.user_mode == 'teams' %}
