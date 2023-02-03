@@ -1,56 +1,92 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container py-5 mb-5">
-    <h1 class="text-center">Scoreboard<span class="vim-caret">͏͏&nbsp;&nbsp;</span>
-    </h1>
+<style>
+  /* own scrollbar */
+  html {
+    /* scrollbar firefox */
+    scrollbar-color: rgb(1, 1, 1) rgb(110, 110, 110);
+  }
+
+  /* Note: The -webkit-scrollbar is not supported by Firefox or IE and Edge. */
+
+  ::-webkit-scrollbar {
+    /* width */
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    /* Track */
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    /* Handle */
+    background: rgb(110, 110, 110);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    /* Handle on hover */
+    background: rgb(110, 110, 110);
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    /* not handle on */
+    background: rgb(1, 1, 1);
+  }
+</style>
+<div class="container py-5 mb-5">
+  <h1 class="text-center">Scoreboard<span class="vim-caret">͏͏&nbsp;&nbsp;</span>
+  </h1>
+</div>
+<div class="container">
+  {% include "components/errors.html" %}
+  {% cache 60,
+  CacheKeys.PUBLIC_SCOREBOARD_TABLE %}
+  {% if standings %}
+  <div id="scoreboard" class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td scope="col" width="10px">
+              <b>Place</b>
+            </td>
+            <td scope="col">
+              <b>{{ get_mode_as_word(capitalize=True) }}</b>
+            </td>
+            <td scope="col">
+              <b>Score</b>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for standing in standings %}
+          <tr>
+            <th scope="row" class="text-center">{{ loop.index }}</th>
+            <td>
+              <a href="{{ generate_account_url(standing.account_id) }}">
+                {{ standing.name | truncate(50) }}
+              </a>
+            </td>
+            <td>{{ standing.score }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="container">
-    {% include "components/errors.html" %}
-    {% cache 60,
-    CacheKeys.PUBLIC_SCOREBOARD_TABLE %}
-    {% if standings %}
-      <div id="scoreboard" class="row">
-        <div class="col-md-12">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <td scope="col" width="10px">
-                  <b>Place</b>
-                </td>
-                <td scope="col">
-                  <b>{{ get_mode_as_word(capitalize=True) }}</b>
-                </td>
-                <td scope="col">
-                  <b>Score</b>
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              {% for standing in standings %}
-                <tr>
-                  <th scope="row" class="text-center">{{ loop.index }}</th>
-                  <td>
-                    <a href="{{ generate_account_url(standing.account_id) }}">
-                      {{ standing.name | truncate(50) }}
-                    </a>
-                  </td>
-                  <td>{{ standing.score }}</td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    {% endif %}
-    {% endcache %}
-  </div>
+  {% endif %}
+  {% endcache %}
+</div>
 {% endblock %}
 
 {% block scripts %}
-  <script defer="defer" src="{{ url_for('views.themes', theme='core', path='js/echarts.bundle.js') }}"></script>
+<script defer="defer" src="{{ url_for('views.themes', theme='core', path='js/echarts.bundle.js') }}"></script>
 {% endblock %}
 
 {% block entrypoint %}
-  <script defer="defer" src="{{ url_for('views.themes', theme='core', path='js/pages/scoreboard.js') }}"></script>
+<script defer="defer" src="{{ url_for('views.themes', theme='core', path='js/pages/scoreboard.js') }}"></script>
 {% endblock %}
