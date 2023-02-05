@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5 mb-5">
+  <style>
+    .collapsible {
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+
+    /* Scrollbar CSS */
+    /* own scrollbar */
+    html {
+      /* scrollbar firefox */
+      scrollbar-color: rgb(1, 1, 1) rgb(110, 110, 110);
+    }
+
+    /* Note: The -webkit-scrollbar is not supported by Firefox or IE and Edge. */
+
+    ::-webkit-scrollbar {
+      /* width */
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      /* Track */
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      /* Handle */
+      background: rgb(110, 110, 110);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      /* Handle on hover */
+      background: rgb(110, 110, 110);
+    }
+
+    ::-webkit-scrollbar-track-piece {
+      /* not handle on */
+      background: rgb(1, 1, 1);
+    }
+
+  </style>
+  </head>
+
+  <body>
+    <div class="container py-5">
+      <h1 class="text-center">Solutions<span class="vim-caret">͏͏&nbsp;&nbsp;</span>
+      </h1>
+    </div>
+
+    <!-- Solutiion for SQL Injection -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">SQL Injection</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for SQL Injection (Update in the Future).</p>
+    </div>
+    <br>
+
+    <!-- Solution for Command Injection -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Command Injection</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for Command Injection (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for File Upload Vulnerabilities -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">File Upload
+          Vulnerabilities</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for File Upload Vulnerabilities (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for Broken Authentication -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Broken Authentication</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for Broken Authentication (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for Cross - Site Scripting -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Cross - Site
+          Scripting</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for Cross - Site Scripting (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for Broken Access Control (IDOR) -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Broken Access Control
+          (IDOR)</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for Path Traversal -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Path Traversal</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for Path Traversal (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for Information Disclosure -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Information
+          Disclosure</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for Information Disclosure (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for Server - Side Request Forgery -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Server - Side Request
+          Forgery</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for Server - Side Request Forgery (Update in the Future)</p>
+    </div>
+    <br>
+
+    <!-- Solution for Advanced Challenges -->
+    <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
+      style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Advanced Challenges</span></b></button>
+    <div class="content">
+      <p style="font-size: larger;">Solutions for Advanced Challenges (Update in the Future)</p>
+    </div>
+    <br>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer="defer" src="{{ url_for('views.themes', theme='core', path='js/echarts.bundle.js') }}"></script>
+{% endblock %}
+
+{% block entrypoint %}
+<script defer="defer" src="{{ url_for('views.themes', theme='core', path='js/pages/scoreboard.js') }}"></script>
+{% endblock %}
