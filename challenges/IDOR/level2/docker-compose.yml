@@ -19,7 +19,7 @@ services:
         build: ./web
         restart: unless-stopped
         ports:
-            - 24002:80
+            - 6002:80
         volumes:
             - ./web/src:/var/www/html
         environment:

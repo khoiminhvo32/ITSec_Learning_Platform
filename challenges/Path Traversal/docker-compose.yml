@@ -1,0 +1,22 @@
+version: "3.6"
+services:
+  path-traversal-1:
+    build: ./level1
+    volumes:
+      - "./level1/src/:/var/www/html/"
+    ports:
+      - 7001:80
+  path-traversal-2:
+    build: ./level2
+    volumes:
+      - "./level2/src/:/var/www/html/"
+    ports:
+      - 7002:80
+  path-traversal-3:
+    build: ./level3
+    volumes:
+      - "./level3/src/:/var/www/html/"
+      - "/var/www/html/upload"
+    ports:
+      - 7003:80
+  
