@@ -7,7 +7,7 @@ if (!isset($_SESSION['username']))
 $username = $_SESSION['username'];
 $email = $_POST['email'];
 if ($username == 'admin') 
-  $message = "<h3><b>Wow you can finally log in as admin, here is your flag CBJS{3b8d44262532d61b6f4eb29c37a57640}</b></h3>";
+  $message = "<h3><b>Wow you can finally log in as admin, here is your flag VIS{N0t_0nly_aBout_SElect}</b></h3>";
 
 if (isset($_POST['button'])) {
   try {

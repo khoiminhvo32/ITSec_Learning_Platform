@@ -63,4 +63,4 @@ CREATE TABLE `secret6` (
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `secret6` (`id`, `content`) VALUES (1, 'CBJS{eb627f3d394a64184da1a16d6bb8100d}');
+INSERT INTO `secret6` (`id`, `content`) VALUES (1, 'VIS{tHe_SeC0nD_Order_SQLi}');
