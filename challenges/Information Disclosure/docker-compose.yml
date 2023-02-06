@@ -1,0 +1,10 @@
+version: "3.6"
+services:
+    infdis:
+        build: .
+        restart: unless-stopped
+        ports:
+            - 8001:80
+        volumes:
+            - ./src:/var/www/html
+
