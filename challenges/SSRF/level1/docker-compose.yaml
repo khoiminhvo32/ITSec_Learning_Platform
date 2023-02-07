@@ -1,0 +1,37 @@
+version: '3.6'
+services:
+  database:
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    build: ./database
+    container_name: level1-database
+    expose:
+      - 3306
+    volumes:
+      - ./database/db.sql:/docker-entrypoint-initdb.d/db.sql 
+    environment:
+      - MYSQL_ROOT_PASSWORD=45299417d86f231f6a584d1488edb763
+      - MYSQL_DATABASE=myDB
+      - MYSQL_USER=blabla
+      - MYSQL_PASSWORD=22ebd5b17182c046e6c4bc5df1719b56 
+  web:
+    depends_on:
+      - database
+    build: .
+    container_name: level1-web
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./src:/var/cbjs/html 
+      - ./web-internal:/var/cbjs/internal/html
+    environment:
+      - MYSQL_HOSTNAME=database
+      - MYSQL_ROOT_PASSWORD=45299417d86f231f6a584d1488edb763
+      - MYSQL_DATABASE=myDB
+      - MYSQL_USER=blabla
+      - MYSQL_PASSWORD=22ebd5b17182c046e6c4bc5df1719b56 
+
+  ftp:
+    build: ./ftp-server 
+    expose:
+      - 21
