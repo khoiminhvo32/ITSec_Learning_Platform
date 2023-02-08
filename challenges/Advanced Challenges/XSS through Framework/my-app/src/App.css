@@ -1,0 +1,46 @@
+/* div.body {
+  text-align: center;
+  border: 3px solid green;
+  font-family: cursive;
+  font-size: large;
+  background-color: #e8c99b;
+  background-image: linear-gradient(315deg, #e8c99b 0%, #e8bc85 74%);
+} */
+
+input[class="btn btn-primary mb-3"] {
+  margin: auto;
+  text-align: center;
+  left: 150px;
+  right: 150px;
+}
+
+input.form-control {
+  font-size: large;
+  border-radius: 10px;
+  border-color: blue;
+}
+
+/* div[class="form-floating mb-3"]{
+  width: 568px;
+  position: relative;
+  left: 150px;
+}
+
+div[class="form-floating"]{
+  width: 568px;
+  position: relative;
+} */
+
+div[class="row g-2"] {
+  position: relative;
+  margin: 50px;
+}
+
+table.table {
+  position: relative;
+  margin: 50px;
+}
+
+th[scope="col"] {
+  position: static;
+}
