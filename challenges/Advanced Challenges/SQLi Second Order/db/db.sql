@@ -56,3 +56,11 @@ INSERT INTO `posts` (`id`, `content`) VALUES (2, 'https://blog.cyberjutsu.io/202
 INSERT INTO `posts` (`id`, `content`) VALUES (3, 'https://blog.cyberjutsu.io/2021/05/13/HTML-sanitizer-vs-XSS/');
 
 DROP TABLE IF EXISTS `secret6`;
+
+CREATE TABLE `secret6` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `secret6` (`id`, `content`) VALUES (1, 'VIS{tHe_SeC0nD_Order_SQLi}');

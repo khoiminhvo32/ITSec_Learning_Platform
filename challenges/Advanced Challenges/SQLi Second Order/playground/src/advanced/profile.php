@@ -2,7 +2,7 @@
 session_start();
 include "../db.php";
 if (!isset($_SESSION['username']))
-  die(header("location: level7.php"));
+  die(header("location: adv_level1.php"));
 
 $username = $_SESSION['username'];
 if (isset($_POST['button'])) {
