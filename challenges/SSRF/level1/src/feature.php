@@ -1,5 +1,4 @@
 <?php
-include("hidden_feature.php");
 error_reporting(E_ERROR | E_PARSE);
 $error = $content = '';
 if (isset($_GET['url'])) {

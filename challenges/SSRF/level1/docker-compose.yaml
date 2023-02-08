@@ -22,8 +22,8 @@ services:
     ports:
       - "9001:9001"
     volumes:
-      - ./src:/var/cbjs/html 
-      - ./web-internal:/var/cbjs/internal/html
+      - ./src:/var/vis/html 
+      - ./web-internal:/var/vis/internal/html
     environment:
       - MYSQL_HOSTNAME=database
       - MYSQL_ROOT_PASSWORD=45299417d86f231f6a584d1488edb763
