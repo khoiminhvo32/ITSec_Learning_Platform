@@ -1,0 +1,142 @@
+﻿id,name,description,category,value,type,state,max_attempts,flags,tags,hints,type_data,connection_info
+1,SQL Injection 1,"### SQL Injection 1 ###
+* Challenge about SQL Injection
+* Goal: Login as admin",[Injection Vulnerabilities] SQL Injection,100,standard,visible,0,VIS{SQL_can_BYPASS_authen??},"Injection, SQLi, VIS",,,http://localhost:1001/
+2,SQL Injection 2,"### SQL Injection 2 ###
+* Challenge about SQL Injection
+* Goal: Login as admin",[Injection Vulnerabilities] SQL Injection,100,standard,visible,0,VIS{Just_Ez_S3mi_C0l0n_ByPass},"Injection, SQLi, VIS",,,http://localhost:1001/level2.php
+3,SQL Injection 3,"### SQL Injection 3 ### 
+
+* Challenge about SQL Injection
+* Goal: Dumb database",[Injection Vulnerabilities] SQL Injection,100,standard,visible,0,VIS{Every_In4_0f_uSers},"Injection, SQLi, VIS",,,http://localhost:1001/level3.php
+4,Command Injection 1,"### Command Injection 1 ###
+* Challenge about Command Injection
+* Goal: Read the secret flag",[Injection Vulnerabilities] Command Injection,100,standard,visible,0,VIS{Easy_RCE_wIth_CMDi},"Injection, CMDi, VIS",,,http://localhost:2001/
+5,Command Injection 2,"### Command Injeciton 2 ###
+* Challenge about Command Injection
+* Goal: Read the secret flag",[Injection Vulnerabilities] Command Injection,100,standard,visible,0,VIS{iS_ThAT_FilTer_T0o_S!mple},"Injection, CMDi, VIS",,,http://localhost:2001/level2.php
+6,Command Injection 3*,"### Command Injection 3 ###
+* Challenge about Command Injection
+* Goal: Read the secret file",[Injection Vulnerabilities] Command Injection,100,standard,visible,0,VIS{Many_More_wAys_t0_ExTend_A_Command},"Injection, CMDi, VIS",,,http://localhost:2001/level3.php
+7,File upload 1,"### File Upload Vulnerabilities 1 ###
+* Challenge about File Upload Vulnerabilities 
+* Goal: RCE the server and read the secret in the base root  (<b>""/""</b>) directory",[File Vulnerabilities] File Upload,100,standard,visible,0,VIS{phP_runs_Php..},"VIS, FileVul",,,http://localhost:3001/
+8,File upload 2,"### File Upload Vulnerabilities 2 ###
+* Challenge about File Upload Vulnerabilities 
+* Goal: RCE the server and read the secret in the base root  (<b>""/""</b>) directory",[File Vulnerabilities] File Upload,100,standard,visible,0,VIS{Not_S0_gUT_Defense},"VIS, FileVul",,,http://localhost:3002/
+9,File upload 3,"### File Upload Vulnerabilities 3 ###
+* Challenge about File Upload Vulnerabilities 
+* Goal: RCE the server and read the secret in the base root  (<b>""/""</b>) directory",[File Vulnerabilities] File Upload,100,standard,visible,0,VIS{Is_Blacklist_Go0d_Enough?},"VIS, FileVul",,,http://localhost:3003/
+10,File upload 4,"### File Upload Vulnerabilities 4 ###
+* Challenge about File Upload Vulnerabilities 
+* Goal: RCE the server and read the secret in the base root  (<b>""/""</b>) directory
+
+<b>Hint</b>: Is there any other config?",[File Vulnerabilities] File Upload,100,standard,visible,0,VIS{Still_More_C0nfig_0uthEre?},"VIS, FileVul",,,http://localhost:3004/
+11,Broken Authentication 1,"### Broken Authentication 1 ###
+* Challenge about Broken Authentication
+* Goal: Login as admin
+
+<b>Hint:</b> Why do they use simple password?",[Operation Vulnerabilities] Broken Authentication,100,standard,visible,0,VIS{Just_Ez_S3mi_P@ssw0rd_GueSsing},"VIS, OpVul",,,http://localhost:4001/
+12,Broken Authentication 2,"### Broken Authentication 2 ###
+* Challenge about Broken Authentication
+* Goal: Login as admin
+
+<b>Hint:</b> Is 2FA-code good enough?",[Operation Vulnerabilities] Broken Authentication,100,standard,visible,0,VIS{M@ster_Br0ken_aUth},"VIS, OpVul",,,http://localhost:4002/
+13,Cross - Site Scripting 1,"### Cross - Site Scripting 1 ###
+* Challenge about Cross - Site Scripting
+* Goal: Trigger the JavaScript Alert function",[Client - Side Vulnerabilities] Cross - Site Scripting,100,standard,visible,0,VIS{Easy_Al3rt!!!},"VIS, XSS",,,http://localhost:5001/
+14,Cross - Site Scripting 2,"### Cross - Site Scripting 2 ###
+* Challenge about Cross - Site Scripting
+* Goal: Trigger the JavaScript Alert function
+
+<b>Hint:</b> Is replacing a word to nothing a good way of defense?",[Client - Side Vulnerabilities] Cross - Site Scripting,100,standard,visible,0,VIS{ByPass_Al3rttt_Ezzzzz},"VIS, XSS",,,http://localhost:5002/
+15,Cross - Site Scripting 3,"### Cross - Site Scripting 3 ###
+* Challenge about Cross - Site Scripting
+* Goal: Trigger the JavaScript Alert function
+
+<b>Hint:</b> Is there any other tags?",[Client - Side Vulnerabilities] Cross - Site Scripting,100,standard,visible,0,VIS{S0_mAny_Tags_in_HTML},"VIS, XSS",,,http://localhost:5003/
+16,Broken Access Control 1,"### Broken Access Control 1 ###
+* Challenge about Broken Access Control (IDOR) level 1
+* Goal: Read the secret in the Crush's wall
+",[IDOR] Broken Access Control,100,standard,visible,0,VIS{Easy_ReaDing_@Dmin_P0sts},"VIS, IDOR",,,http://localhost:6001/
+17,Broken Access Control 2,"### Broken Access Control 2 ###
+* Challenge about Broken Access Control (IDOR) level 2
+* Goal: Read the secret in the Crush's wall
+
+<b>Hint:</b> Is that some kinds of encryption?
+",[IDOR] Broken Access Control,100,standard,visible,0,VIS{EnCrypt_iS_Gut_BUt_Iz_Dat_En0ugh??},"VIS, IDOR",,,http://localhost:6002/
+18,Broken Access Control 3,"### Broken Access Control 3 ###
+* Challenge about Broken Access Control (IDOR) level 3
+* Goal: Read the secret in the Crush's wall
+
+<b>Hint:</b> Is there any other param?",[IDOR] Broken Access Control,100,standard,visible,0,VIS{Still_N0t_So_Gut_L0gic!!},"VIS, IDOR",,,http://localhost:6003/
+19,Path Traversal 1,"### Path Traversal 1 ###
+* Challenge about Path Traversal level 1
+* Goal: Read the secret in <b>/etc/passwd</b>",[File Vulnerabilities] Path Traversal,100,standard,visible,0,VIS{Path_Traversal_File_Reading},"VIS, FileVul",,,http://localhost:7001/
+20,Path Traversal 2,"### Path Traversal 2 ###
+* Challenge about Path Traversal level 2
+* Goal: Read the secret in <b>/etc/passwd</b>
+
+<b>Hint</b>: How many ways are there to travel in Linux OS?",[File Vulnerabilities] Path Traversal,100,standard,visible,0,VIS{How_@bout_Absolute_PAth?},"VIS, FileVul",,,http://localhost:7002/
+21,Path Traversal 3,"### Path Traversal 3 ###
+* Challenge about Path Traversal level 3
+* Goal: RCE the server
+
+<b>Hint:</b> Is reading the only impact of Path Traversal?",[File Vulnerabilities] Path Traversal,100,standard,visible,0,VIS{file_write_lead_to_RCE_Ezzzzz},"VIS, FileVul",,,http://localhost:7003/
+22,Information Disclosure ,"### Information Disclosure ###
+* Challenge about Information Disclosure
+* Goal: Find all the things that Devs forget to remove in the server.
+
+",[Operation Vulnerabilities] Information Disclosure,100,standard,visible,0,VIS{READ_me_and_READ_MoRE} ,VIS,,,http://localhost:8001/
+23,Information Disclosure ,"### Information Disclosure ###
+* Challenge about Information Disclosure
+* Goal: Find all the things that Devs forget to remove in the server.
+",[Operation Vulnerabilities] Information Disclosure,100,standard,visible,0,VIS{Sometimes_Dev_f0rget_IMPORTANT_Files!},VIS,,,http://localhost:8001/
+24,SSRF 1,"### Server - Side Request Forgery 1 ###
+* Challenge about Server - Side Request Forgery level 1
+* Goal: Try to shutdown the server
+
+<b>Note:</b> This challenge does not have flags.",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{eZZZZ_InterNal_aDmin_:>},"VIS, SSRF",,,http://localhost:9001/
+25,SSRF 2,"### Server - Side Request Forgery ###
+* Challenge about Server - Side Request Forgery level 2
+* Goat: Access <b>admin</b> panel and read the secret
+",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{eZZZZ_InterNal_aDmin_:>},"VIS, SSRF",,,http://localhost:9001/
+26,SSRF 3 ,"### Server - Side Request Forgery 3 ###
+* Challenge about Server - Side Request Forgery level 3
+* Goat: Read the secret in Database",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{HiDDen_Gems_in_InTernal_DB},"VIS, SSRF",,,http://localhost:9001/
+27,*SSRF 4,"### Server - Side Request Forgery 4 ###
+* Challenge about Server - Side Request Forgery
+* Goat: Read the secret at: <b>/var/ftp/flag.txt</b>
+	
+<b>Hint:</b> Is there any other opened - service?",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{FTP_cAn_alSo_Bee_AccessED?},"VIS, SSRF",,,http://localhost:9001/
+28,SSRF 5,"### Server - Side Request Forgery ###
+* Challenge about Server - Side Request Forgery 
+* Goat: Read the <b>/etc/passwd</b>
+
+<b>Hint:</b> Is there any other protocol than https / http?",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{File_Schemeeeeeeeee},"VIS, SSRF",,,http://localhost:9001/
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
