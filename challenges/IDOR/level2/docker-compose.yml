@@ -24,7 +24,7 @@ services:
             - ./web/src:/var/www/html
         environment:
             # These password and stuff is not neccesarry too secret
-            - MYSQL_HOSTNAME=db
+            - MYSQL_HOSTNAME=db_idor
             - MYSQL_ROOT_PASSWORD=45299417d86f231f6a584d1488edb763
             - MYSQL_DATABASE=myDB
             - MYSQL_USER=db_user
