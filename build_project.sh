@@ -26,9 +26,9 @@ docker compose -f ./challenges/XSS/docker-compose.yml down
 docker compose -f ./challenges/XSS/docker-compose.yml up -d
 
 # Build Broken Access Control (IDOR) challenges
-docker compose -f ./challenges/IDOR/level1/docker-compose.yml down
-docker compose -f ./challenges/IDOR/level2/docker-compose.yml down
-docker compose -f ./challenges/IDOR/level3/docker-compose.yml down
+docker compose -f ./challenges/IDOR/level1/docker-compose.yml down --rmi all
+docker compose -f ./challenges/IDOR/level2/docker-compose.yml down --rmi all
+docker compose -f ./challenges/IDOR/level3/docker-compose.yml down --rmi all
 cd ./challenges/IDOR/level1/ # IDOR level 1
 docker-compose up -d
 cd ../../../
@@ -48,5 +48,5 @@ docker compose -f ./challenges/Information\ Disclosure/docker-compose.yml down
 docker compose -f ./challenges/Information\ Disclosure/docker-compose.yml up -d
 
 # Build Server - Side Request Forgery (SSRF) Challenges
-docker compose -f ./challenges/SSRF/level1/docker-compose.yaml down
-docker compose -f ./challenges/SSRF/level1/docker-compose.yaml up -d
+docker compose -f ./challenges/SSRF/ssrf-chall/docker-compose.yaml down
+docker compose -f ./challenges/SSRF/ssrf-chall/docker-compose.yaml up -d
