@@ -30,4 +30,4 @@ docker compose -f ./challenges/Path\ Traversal/docker-compose.yml down
 docker compose -f ./challenges/Information\ Disclosure/docker-compose.yml down
 
 # Stop Server - Side Request Forgery (SSRF) Challenges
-docker compose -f ./challenges/SSRF/level1/docker-compose.yaml down
+docker compose -f ./challenges/SSRF/ssrf-chall/docker-compose.yaml down

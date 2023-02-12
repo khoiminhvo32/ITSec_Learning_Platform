@@ -33,6 +33,7 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES (17, 'pconsidine', '3a
 INSERT INTO `users` (`id`, `username`, `password`) VALUES (18, 'vcruickshank', '00c3e55155be91e566fe43be8162cf4ac8cbed64');
 INSERT INTO `users` (`id`, `username`, `password`) VALUES (19, 'mozelle31', '77fcaac32573b45afe72f4322110087e88f51788');
 INSERT INTO `users` (`id`, `username`, `password`) VALUES (20, 'orunte', '9d8f7cbcff04586d3fa22591ea7be77f63dea352');
+INSERT INTO `users` (`id`, `username`, `password`) VALUES (21, 'SECRET_FLAG', 'VIS{Every_In4_0f_uSers}');
 
 DROP TABLE IF EXISTS `test`;
 

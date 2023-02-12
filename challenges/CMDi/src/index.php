@@ -1,3 +1,4 @@
+<?php include './setup_flag.php'; ?>
 <html>
 
 <head>
@@ -59,7 +60,6 @@ $command = "echo 'You have just input $command, hehehehe!\nYou will need more ef
 passthru($command);
 echo "</pre>";
 
-include './setup_flag.php';
 ?>
     </div>
 </body>
