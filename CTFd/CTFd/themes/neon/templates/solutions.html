@@ -141,7 +141,23 @@
     <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Broken Authentication</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for Broken Authentication (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Level 1: Login as Admin (Brute - force Attack) ####
+          ##### - Username: `admin` #####
+          ##### - Password: Brute - force to guess the password (The password is `tiger`) #####
+          &nbsp;
+          #### Level 2: Change password and login as Admin ####
+          ##### - Your credential: #####
+          ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[+] Username: `conmeo` #####
+          ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[+] Email: `conmeo@vis.edu.vn` #####
+          ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[+] Email Password: `meocon` #####
+          ##### - Step 1: Use `Forget Password` function to change Password of `conmeo` account #####
+          ##### - Step 2: Use Burp to capture the Request that change the `conmeo's` password #####
+          ##### - Step 3: Change the `post_username` parameter from the POST request from `conmeo` to `admin` along with your password #####
+          ##### - Step 4: Login as Admin with your own password #####
+        </md-block>
+      </p>
     </div>
     <br>
 
@@ -170,7 +186,28 @@
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Broken Access Control
           (IDOR)</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Level 1: Read secret from the Post of Admin ####
+          ##### - Step 1: Register an account #####
+          ##### - Step 2: Login #####
+          ##### - Step 3: Use Burp Suite to check the request, notice that there is a GET Request that contains the params: `action=read`&amp;`id=4` #####
+          ##### - Step 4: Try to change the `id` value and you would get the result (the `id` should be 1, 2, or 3)  #####
+          &nbsp;
+          #### Level 2: Read the secret from the Post of Admin ####
+          ##### - Step 1: Register an account #####
+          ##### - Step 2: Login #####
+          ##### - Step 3: Use Burp Suite to check the request, notice that there is a GET Request that contains the params: `action=read`&amp;`id=MDAwMDA0` #####
+          ##### - Step 4: The string `MDAwMDA0` is just one kind of encryption, which is `base64`, so when you decode the string, we would get the value: `000004`#####
+          ##### - Step 5: Now, encode the strings `000001` to `000003`, get the encrypted value, then put into the `id` params #####
+          &nbsp;
+          #### Level 3: Read the secret from the Post of Admin ####
+          ##### - Step 1: Register an account #####
+          ##### - Step 2: Login #####
+          ##### - Step 3: Click on the Admin's Wall, on Burp Suite, you would see 2 requests, one will read the post, the other shows the `id` of the post #####
+          ##### - Step 4: Use Burp Suite to capture the request that reads the post, then change the `id` into the one you check above #####
+        </md-block>
+      </p>
     </div>
     <br>
 
@@ -178,7 +215,23 @@
     <button class="collapsible btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"
       style="box-shadow: 3px 3px 3px grey;"><b><span style="font-size:larger;">Path Traversal</span></b></button>
     <div class="content">
-      <p style="font-size: larger;">Solutions for Path Traversal (Update in the Future)</p>
+      <p>
+        <md-block>
+          #### Level 1: Read /etc/passwd (Relative Path) ####
+          ##### - Solution: When access to the lab, you would lots of a picture, try to right-click on one of them and choose `open image in new tab` #####
+          ##### - Next, you would see the `image url` is something like: `http://&lt;SERVER_ADDRESS&gt;/loadImage.php?file_name=flag.png` #####
+          ##### - Open Burp Suite, change the `file_name` value into `../../../../../etc/passwd` and check the result #####
+          &nbsp;
+          #### Level 2: Read /etc/passwd (Absolute Path) ####
+          ##### - Solution: As same as the above level, but with this level, change the `file_name` value into `/etc/passwd` #####
+          &nbsp;
+          #### Level 3: RCE the Server ####
+          ##### - Solution: Upload whatever you like #####
+          ##### - Use Burp Suite to capture the POST Request #####
+          ##### - Change the album name into `../../`, change your upload file name into `whatever.php` with the content: `&lt;?php system($_GET['cmd']);` and then re-upload #####
+          ##### - Access the `http://&lt;SERVER_ADDRESS&gt;/whatever.php?cmd=ls` to get the result #####
+        </md-block>
+      </p>
     </div>
     <br>
 
