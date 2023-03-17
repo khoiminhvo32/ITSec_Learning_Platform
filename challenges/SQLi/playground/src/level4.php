@@ -18,7 +18,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       if ($db_result->num_rows > 0) {
         $row = $db_result->fetch_assoc();
         if ($row['username'] === "admin") {
-          $message = "ow you can log in as admin, here is your flag <b>VIS{Room_EsCapinG..}</b>";
+          $message = "Wow you can log in as admin, here is your flag <b>VIS{Room_EsCapinG..}</b>";
         } else
           $message = "You logged in, but then what? You are not an admin";
       } else {
