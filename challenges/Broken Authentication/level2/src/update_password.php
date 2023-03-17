@@ -6,7 +6,7 @@ if (!isset($_SESSION['username']))
 if (isset($_POST['button'])){
     try {
         include "./db.php";
-        $sql = "update users set password = MD5(?) where username=?";
+        $sql = "update users set password = MD5(?) where username=?"; // conmeo
         $sth = $database->prepare($sql);
         $sth->bind_param('ss', $_POST['new_password'] ,$_POST['post_username']);
         $sth->execute();
