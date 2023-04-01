@@ -10,5 +10,5 @@ RUN find . -type d -exec chmod 750 {} \;
 # prevent delete
 RUN chmod +t -R /var/www/html/
 
-# RUN echo "VIS{Path_Traversal_File_Reading}" >> /etc/passwd
+
 
