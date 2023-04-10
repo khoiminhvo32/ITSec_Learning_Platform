@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: ./web
+    restart: unless-stopped
+    user: "node"
+    volumes:
+      - "./web/src:/usr/src/app"
+    ports:
+      - "6084:3000"
+      - "6004:6004" # FOR DEBUG
+    command: ["bash", "-c", "npm install --save && nodemon -L --inspect=0.0.0.0:6004 app.js"]
+    depends_on:
+      - db
+  db:
+    build: ./database
+    restart: unless-stopped
+    expose:
+      - 27017
+    environment:
+      - MONGO_DATABASE=hpt

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nosqli level 4</title>
+</head>
+
+<body>
+
+
+    <h1>Login</h1>
+
+    <form action="/login" method="POST">
+
+        <input type="text" name="username" placeholder="username" id="username">
+        <br><br>
+        <input type="password" name="password" placeholder="password" id="password">
+        <br><br>
+        <button>login</button>
+        
+    </form>
+    <br>
+    <h1>Search</h1>
+    <form action="" method="" onsubmit="search(event)">
+        <input type="text" id="query" name="query" placeholder="username">
+        <br><br>
+        <button>Search</button>
+    </form>
+    <br>
+    <div id="result"></div>
+
+</body>
+
+<script type="text/javascript">
+    function search(event) {
+        event.preventDefault();
+        var q = document.getElementById("query").value;
+        var data = { username: { "$regex": `.*${q}.*` } }
+
+        fetch('/search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then((response) => {
+            return response.json();
+        }).then((response) => {
+            var result = "Search result";
+            var tables = "<tr><th>Username</th></tr>";
+            response.forEach(function (user) {
+                tables += "<tr>" +
+                    "<td>" + user.username + "</td>" +
+                    "</tr>";
+            });
+            document.getElementById("result").innerHTML = result + '<table>' + tables + '</table>';
+        });
+
+        // Prevent form submit.
+        return false;
+    };
+</script>
+
+</html>
