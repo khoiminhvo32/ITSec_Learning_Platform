@@ -1,0 +1,9 @@
+version: "3.6"
+services:
+  typejuggling_level_1:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "12001:80"
+    volumes:
+      - ./src:/var/www/html/
